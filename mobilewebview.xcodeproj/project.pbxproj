@@ -17,6 +17,22 @@
 		4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F79A2490FBE900ED60E5 /* NOTES.txt */; };
 		4E57F79E2491329600ED60E5 /* JavascriptBridgeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */; };
 		4E57F7A0249138AB00ED60E5 /* JavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */; };
+		4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */; };
+		4E57F7A52491468900ED60E5 /* mobile_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7A32491468900ED60E5 /* mobile_config.json */; };
+		4E57F7AB2491472900ED60E5 /* ConfigurationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7A72491472900ED60E5 /* ConfigurationLoader.swift */; };
+		4E57F7AC2491472900ED60E5 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7A82491472900ED60E5 /* AppConfiguration.swift */; };
+		4E57F7AD2491472900ED60E5 /* OAuthConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7A92491472900ED60E5 /* OAuthConfiguration.swift */; };
+		4E57F7AE2491472900ED60E5 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7AA2491472900ED60E5 /* Configuration.swift */; };
+		4E57F7B2249147AD00ED60E5 /* ErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7B0249147AD00ED60E5 /* ErrorCodes.swift */; };
+		4E57F7B3249147AD00ED60E5 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7B1249147AD00ED60E5 /* ErrorHandler.swift */; };
+		4E57F7B52491480C00ED60E5 /* UIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7B42491480C00ED60E5 /* UIError.swift */; };
+		4E57F7B92491489300ED60E5 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7B82491489200ED60E5 /* DateUtils.swift */; };
+		4E57F7BC2491495D00ED60E5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7BA2491495D00ED60E5 /* Cartfile */; };
+		4E57F7BD2491495D00ED60E5 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */; };
+		4E57F7C024914AE200ED60E5 /* AppAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F7BF24914AE200ED60E5 /* AppAuth.framework */; };
+		4E57F7C224914AF500ED60E5 /* SwiftCoroutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F7C124914AF500ED60E5 /* SwiftCoroutine.framework */; };
+		4E57F7C424914AFC00ED60E5 /* SwiftKeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */; };
+		4E57F7C824914BED00ED60E5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7C724914BED00ED60E5 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +48,22 @@
 		4E57F79A2490FBE900ED60E5 /* NOTES.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTES.txt; sourceTree = "<group>"; };
 		4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptBridgeImpl.swift; sourceTree = "<group>"; };
 		4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptBridge.swift; sourceTree = "<group>"; };
+		4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobile_config_localapi.json; sourceTree = "<group>"; };
+		4E57F7A32491468900ED60E5 /* mobile_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobile_config.json; sourceTree = "<group>"; };
+		4E57F7A72491472900ED60E5 /* ConfigurationLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationLoader.swift; sourceTree = "<group>"; };
+		4E57F7A82491472900ED60E5 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		4E57F7A92491472900ED60E5 /* OAuthConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthConfiguration.swift; sourceTree = "<group>"; };
+		4E57F7AA2491472900ED60E5 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		4E57F7B0249147AD00ED60E5 /* ErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCodes.swift; sourceTree = "<group>"; };
+		4E57F7B1249147AD00ED60E5 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		4E57F7B42491480C00ED60E5 /* UIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
+		4E57F7B82491489200ED60E5 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		4E57F7BA2491495D00ED60E5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
+		4E57F7BF24914AE200ED60E5 /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = Carthage/Build/iOS/AppAuth.framework; sourceTree = SOURCE_ROOT; };
+		4E57F7C124914AF500ED60E5 /* SwiftCoroutine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCoroutine.framework; path = Carthage/Build/iOS/SwiftCoroutine.framework; sourceTree = SOURCE_ROOT; };
+		4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeychainWrapper.framework; path = Carthage/Build/iOS/SwiftKeychainWrapper.framework; sourceTree = SOURCE_ROOT; };
+		4E57F7C724914BED00ED60E5 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E57F7C424914AFC00ED60E5 /* SwiftKeychainWrapper.framework in Frameworks */,
+				4E57F7C024914AE200ED60E5 /* AppAuth.framework in Frameworks */,
+				4E57F7C224914AF500ED60E5 /* SwiftCoroutine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,11 +83,17 @@
 		4E57F7742490F17900ED60E5 = {
 			isa = PBXGroup;
 			children = (
+				4E57F7942490F20600ED60E5 /* Source */,
+				4E57F7BE24914AA600ED60E5 /* Frameworks */,
+				4E57F7A32491468900ED60E5 /* mobile_config.json */,
+				4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */,
+				4E57F7BA2491495D00ED60E5 /* Cartfile */,
+				4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */,
+				4E57F7C724914BED00ED60E5 /* .swiftlint.yml */,
 				4E57F79A2490FBE900ED60E5 /* NOTES.txt */,
 				4E57F7862490F17A00ED60E5 /* Assets.xcassets */,
 				4E57F78E2490F17A00ED60E5 /* Info.plist */,
 				4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */,
-				4E57F7942490F20600ED60E5 /* Source */,
 				4E57F77E2490F17900ED60E5 /* Products */,
 				4E57F7882490F17A00ED60E5 /* Preview Content */,
 			);
@@ -78,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4E57F7952490F21F00ED60E5 /* App */,
+				4E57F7A62491472900ED60E5 /* Configuration */,
 				4E57F79C24910BC300ED60E5 /* Plumbing */,
 				4E57F7962490F25800ED60E5 /* Views */,
 			);
@@ -113,7 +155,9 @@
 		4E57F79C24910BC300ED60E5 /* Plumbing */ = {
 			isa = PBXGroup;
 			children = (
+				4E57F7AF2491476300ED60E5 /* Errors */,
 				4E57F7A12491418C00ED60E5 /* Interop */,
+				4E57F7B72491486C00ED60E5 /* Utilities */,
 			);
 			path = Plumbing;
 			sourceTree = "<group>";
@@ -121,10 +165,50 @@
 		4E57F7A12491418C00ED60E5 /* Interop */ = {
 			isa = PBXGroup;
 			children = (
-				4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */,
 				4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */,
+				4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */,
 			);
 			path = Interop;
+			sourceTree = "<group>";
+		};
+		4E57F7A62491472900ED60E5 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4E57F7A82491472900ED60E5 /* AppConfiguration.swift */,
+				4E57F7AA2491472900ED60E5 /* Configuration.swift */,
+				4E57F7A72491472900ED60E5 /* ConfigurationLoader.swift */,
+				4E57F7A92491472900ED60E5 /* OAuthConfiguration.swift */,
+			);
+			name = Configuration;
+			path = Source/Configuration;
+			sourceTree = SOURCE_ROOT;
+		};
+		4E57F7AF2491476300ED60E5 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				4E57F7B0249147AD00ED60E5 /* ErrorCodes.swift */,
+				4E57F7B1249147AD00ED60E5 /* ErrorHandler.swift */,
+				4E57F7B42491480C00ED60E5 /* UIError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		4E57F7B72491486C00ED60E5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4E57F7B82491489200ED60E5 /* DateUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4E57F7BE24914AA600ED60E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E57F7BF24914AE200ED60E5 /* AppAuth.framework */,
+				4E57F7C124914AF500ED60E5 /* SwiftCoroutine.framework */,
+				4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +221,8 @@
 				4E57F7792490F17900ED60E5 /* Sources */,
 				4E57F77A2490F17900ED60E5 /* Frameworks */,
 				4E57F77B2490F17900ED60E5 /* Resources */,
+				4E57F7C524914B3E00ED60E5 /* ShellScript */,
+				4E57F7C624914B5A00ED60E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,14 +271,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E57F7C824914BED00ED60E5 /* .swiftlint.yml in Resources */,
+				4E57F7BC2491495D00ED60E5 /* Cartfile in Resources */,
+				4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */,
 				4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */,
 				4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */,
 				4E57F78A2490F17A00ED60E5 /* Preview Assets.xcassets in Resources */,
+				4E57F7BD2491495D00ED60E5 /* Cartfile.resolved in Resources */,
 				4E57F7872490F17A00ED60E5 /* Assets.xcassets in Resources */,
+				4E57F7A52491468900ED60E5 /* mobile_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E57F7C524914B3E00ED60E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftlint\n";
+		};
+		4E57F7C624914B5A00ED60E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AppAuth.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCoroutine.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftKeychainWrapper.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E57F7792490F17900ED60E5 /* Sources */ = {
@@ -200,11 +331,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */,
+				4E57F7B52491480C00ED60E5 /* UIError.swift in Sources */,
 				4E57F7A0249138AB00ED60E5 /* JavascriptBridge.swift in Sources */,
+				4E57F7AC2491472900ED60E5 /* AppConfiguration.swift in Sources */,
 				4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */,
 				4E57F79E2491329600ED60E5 /* JavascriptBridgeImpl.swift in Sources */,
+				4E57F7AD2491472900ED60E5 /* OAuthConfiguration.swift in Sources */,
+				4E57F7AE2491472900ED60E5 /* Configuration.swift in Sources */,
+				4E57F7AB2491472900ED60E5 /* ConfigurationLoader.swift in Sources */,
 				4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */,
+				4E57F7B3249147AD00ED60E5 /* ErrorHandler.swift in Sources */,
+				4E57F7B92491489300ED60E5 /* DateUtils.swift in Sources */,
 				4E57F7852490F17900ED60E5 /* MainView.swift in Sources */,
+				4E57F7B2249147AD00ED60E5 /* ErrorCodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +482,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +505,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
