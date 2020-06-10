@@ -1,21 +1,19 @@
-//
-//  ContentView.swift
-//  Mobile WebView Demo
-//
-//  Created by gary on 10/06/2020.
-//  Copyright © 2020 authguidance.com. All rights reserved.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+/*
+ * The main view of the app is a full screen web view
+ */
+struct MainView: View {
+    
+    /*
+     * Render the tree of views
+     */
     var body: some View {
-        Text("Hello, World!")
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        
+        let url = URL(string: "https://www.bbc.co.uk")
+        let request = URLRequest(url: url!)
+        return VStack {
+            WebView(request: request)
+        }
     }
 }

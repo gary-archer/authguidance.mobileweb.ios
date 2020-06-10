@@ -13,6 +13,7 @@
 		4E57F7872490F17A00ED60E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7862490F17A00ED60E5 /* Assets.xcassets */; };
 		4E57F78A2490F17A00ED60E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7892490F17A00ED60E5 /* Preview Assets.xcassets */; };
 		4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */; };
+		4E57F7992490F50500ED60E5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7982490F50500ED60E5 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4E57F7892490F17A00ED60E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E57F78C2490F17A00ED60E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E57F78E2490F17A00ED60E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E57F7982490F50500ED60E5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +88,18 @@
 		4E57F7962490F25800ED60E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E57F7972490F4F300ED60E5 /* Utilities */,
 				4E57F7842490F17900ED60E5 /* MainView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4E57F7972490F4F300ED60E5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4E57F7982490F50500ED60E5 /* WebView.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */,
+				4E57F7992490F50500ED60E5 /* WebView.swift in Sources */,
 				4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */,
 				4E57F7852490F17900ED60E5 /* MainView.swift in Sources */,
 			);
