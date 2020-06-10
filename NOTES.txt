@@ -1,0 +1,20 @@
+TODO
+----
+1. Return response to the SPA as an object containing fields for data + error
+
+2. Get error serialization working, including Swift call stack
+
+3. App startup and configuration in line with main iOS sample
+   Also update AppDelegate and SceneDelegate
+
+4. Plugin in dependencies and fix up SwiftLint warnings
+   Add Carthage and update project setup
+
+5. Add main sample OAuth code + error handling
+
+6. Initial use of coroutines for getAccessToken
+
+7. Get login redirect working
+
+8. Get custom https scheme responses working
+   Add entitlements and update mobile assets file

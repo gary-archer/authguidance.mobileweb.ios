@@ -5,15 +5,22 @@ import SwiftUI
  */
 struct MainView: View {
     
+    private var requestUrl: URLRequest
+    
+    init() {
+        let webViewUrl = URL(string: "https://web.mycompany.com/spa")!
+        self.requestUrl = URLRequest(url: webViewUrl)
+    }
+    
     /*
-     * Render the tree of views
+     * Render a webview in the entire area
      */
     var body: some View {
         
-        let url = URL(string: "https://www.bbc.co.uk")
-        let request = URLRequest(url: url!)
-        return VStack {
-            WebView(request: request)
+        GeometryReader { geometry in
+            VStack {
+                CustomWebView(request: self.requestUrl, width: geometry.size.width, height: geometry.size.height)
+            }
         }
     }
 }
