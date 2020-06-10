@@ -77,9 +77,9 @@
 		4E57F7942490F20600ED60E5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4E57F7952490F21F00ED60E5 /* App */,
 				4E57F79C24910BC300ED60E5 /* Plumbing */,
 				4E57F7962490F25800ED60E5 /* Views */,
-				4E57F7952490F21F00ED60E5 /* App */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -113,18 +113,18 @@
 		4E57F79C24910BC300ED60E5 /* Plumbing */ = {
 			isa = PBXGroup;
 			children = (
-				4E57F7A12491418C00ED60E5 /* WebView */,
+				4E57F7A12491418C00ED60E5 /* Interop */,
 			);
 			path = Plumbing;
 			sourceTree = "<group>";
 		};
-		4E57F7A12491418C00ED60E5 /* WebView */ = {
+		4E57F7A12491418C00ED60E5 /* Interop */ = {
 			isa = PBXGroup;
 			children = (
 				4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */,
 				4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */,
 			);
-			path = WebView;
+			path = Interop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
