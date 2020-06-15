@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E07E3522497DCFA006B1A5A /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3512497DCFA006B1A5A /* AppViewModel.swift */; };
+		4E07E36C2497DDFA006B1A5A /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3642497DDFA006B1A5A /* Authenticator.swift */; };
+		4E07E36D2497DDFA006B1A5A /* AuthenticatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3652497DDFA006B1A5A /* AuthenticatorImpl.swift */; };
+		4E07E36E2497DDFA006B1A5A /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3662497DDFA006B1A5A /* TokenStorage.swift */; };
+		4E07E36F2497DDFA006B1A5A /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3672497DDFA006B1A5A /* TokenData.swift */; };
+		4E07E3702497DDFA006B1A5A /* CognitoLogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3692497DDFA006B1A5A /* CognitoLogoutManager.swift */; };
+		4E07E3712497DDFA006B1A5A /* OktaLogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E36A2497DDFA006B1A5A /* OktaLogoutManager.swift */; };
+		4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */; };
+		4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */; };
 		4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7802490F17900ED60E5 /* AppDelegate.swift */; };
 		4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7822490F17900ED60E5 /* SceneDelegate.swift */; };
-		4E57F7852490F17900ED60E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* MainView.swift */; };
+		4E57F7852490F17900ED60E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* AppView.swift */; };
 		4E57F7872490F17A00ED60E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7862490F17A00ED60E5 /* Assets.xcassets */; };
 		4E57F78A2490F17A00ED60E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7892490F17A00ED60E5 /* Preview Assets.xcassets */; };
 		4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */; };
@@ -36,10 +45,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E07E3512497DCFA006B1A5A /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		4E07E3642497DDFA006B1A5A /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		4E07E3652497DDFA006B1A5A /* AuthenticatorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorImpl.swift; sourceTree = "<group>"; };
+		4E07E3662497DDFA006B1A5A /* TokenStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
+		4E07E3672497DDFA006B1A5A /* TokenData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
+		4E07E3692497DDFA006B1A5A /* CognitoLogoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CognitoLogoutManager.swift; sourceTree = "<group>"; };
+		4E07E36A2497DDFA006B1A5A /* OktaLogoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OktaLogoutManager.swift; sourceTree = "<group>"; };
+		4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutManager.swift; sourceTree = "<group>"; };
+		4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentActionHandler.swift; sourceTree = "<group>"; };
 		4E57F77D2490F17900ED60E5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57F7802490F17900ED60E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E57F7822490F17900ED60E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4E57F7842490F17900ED60E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4E57F7842490F17900ED60E5 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		4E57F7862490F17A00ED60E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E57F7892490F17A00ED60E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E57F78C2490F17A00ED60E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +77,7 @@
 		4E57F7B42491480C00ED60E5 /* UIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
 		4E57F7B82491489200ED60E5 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		4E57F7BA2491495D00ED60E5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
+		4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
 		4E57F7BF24914AE200ED60E5 /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = Carthage/Build/iOS/AppAuth.framework; sourceTree = SOURCE_ROOT; };
 		4E57F7C124914AF500ED60E5 /* SwiftCoroutine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCoroutine.framework; path = Carthage/Build/iOS/SwiftCoroutine.framework; sourceTree = SOURCE_ROOT; };
 		4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeychainWrapper.framework; path = Carthage/Build/iOS/SwiftKeychainWrapper.framework; sourceTree = SOURCE_ROOT; };
@@ -80,6 +98,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E07E3632497DDD9006B1A5A /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				4E07E3642497DDFA006B1A5A /* Authenticator.swift */,
+				4E07E3652497DDFA006B1A5A /* AuthenticatorImpl.swift */,
+				4E07E3682497DDFA006B1A5A /* Logout */,
+				4E07E3672497DDFA006B1A5A /* TokenData.swift */,
+				4E07E3662497DDFA006B1A5A /* TokenStorage.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		4E07E3682497DDFA006B1A5A /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				4E07E3692497DDFA006B1A5A /* CognitoLogoutManager.swift */,
+				4E07E36A2497DDFA006B1A5A /* OktaLogoutManager.swift */,
+				4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
 		4E57F7742490F17900ED60E5 = {
 			isa = PBXGroup;
 			children = (
@@ -129,8 +169,10 @@
 		4E57F7952490F21F00ED60E5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4E57F7842490F17900ED60E5 /* AppView.swift */,
 				4E57F7802490F17900ED60E5 /* AppDelegate.swift */,
 				4E57F7822490F17900ED60E5 /* SceneDelegate.swift */,
+				4E07E3512497DCFA006B1A5A /* AppViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -139,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				4E57F7972490F4F300ED60E5 /* Utilities */,
-				4E57F7842490F17900ED60E5 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +198,7 @@
 			children = (
 				4E57F7AF2491476300ED60E5 /* Errors */,
 				4E57F7A12491418C00ED60E5 /* Interop */,
+				4E07E3632497DDD9006B1A5A /* OAuth */,
 				4E57F7B72491486C00ED60E5 /* Utilities */,
 			);
 			path = Plumbing;
@@ -196,6 +238,7 @@
 		4E57F7B72491486C00ED60E5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */,
 				4E57F7B82491489200ED60E5 /* DateUtils.swift */,
 			);
 			path = Utilities;
@@ -331,18 +374,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */,
+				4E07E3702497DDFA006B1A5A /* CognitoLogoutManager.swift in Sources */,
 				4E57F7B52491480C00ED60E5 /* UIError.swift in Sources */,
+				4E07E36F2497DDFA006B1A5A /* TokenData.swift in Sources */,
 				4E57F7A0249138AB00ED60E5 /* JavascriptBridge.swift in Sources */,
 				4E57F7AC2491472900ED60E5 /* AppConfiguration.swift in Sources */,
 				4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */,
+				4E07E36D2497DDFA006B1A5A /* AuthenticatorImpl.swift in Sources */,
+				4E07E3522497DCFA006B1A5A /* AppViewModel.swift in Sources */,
+				4E07E36E2497DDFA006B1A5A /* TokenStorage.swift in Sources */,
 				4E57F79E2491329600ED60E5 /* JavascriptBridgeImpl.swift in Sources */,
+				4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */,
 				4E57F7AD2491472900ED60E5 /* OAuthConfiguration.swift in Sources */,
 				4E57F7AE2491472900ED60E5 /* Configuration.swift in Sources */,
+				4E07E3712497DDFA006B1A5A /* OktaLogoutManager.swift in Sources */,
+				4E07E36C2497DDFA006B1A5A /* Authenticator.swift in Sources */,
 				4E57F7AB2491472900ED60E5 /* ConfigurationLoader.swift in Sources */,
 				4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */,
 				4E57F7B3249147AD00ED60E5 /* ErrorHandler.swift in Sources */,
 				4E57F7B92491489300ED60E5 /* DateUtils.swift in Sources */,
-				4E57F7852490F17900ED60E5 /* MainView.swift in Sources */,
+				4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */,
+				4E57F7852490F17900ED60E5 /* AppView.swift in Sources */,
 				4E57F7B2249147AD00ED60E5 /* ErrorCodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

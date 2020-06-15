@@ -3,11 +3,13 @@ import SwiftUI
 /*
  * The main view of the app is a full screen web view
  */
-struct MainView: View {
+struct AppView: View {
 
+    @ObservedObject var model: AppViewModel
     private var requestUrl: URLRequest
 
     init() {
+        self.model = AppViewModel()
         let webViewUrl = URL(string: "https://web.mycompany.com/spa")!
         self.requestUrl = URLRequest(url: webViewUrl)
     }
