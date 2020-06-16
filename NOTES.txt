@@ -1,21 +1,31 @@
 TODO
 ----
-1. Startup handling to read config file and create authenticator
+1. Get error serialization working, including Swift call stack
+   Step 1 is to just debug output the JSON
+   Test returns to SPA without problems
+ 
+2. Finalise SPA mobile interop code
+   Can I consolidate Android and iOS / share classes?
+ 
+3. Improve interop code to work out method name - does not belong in CustomWebView class
 
-2. Use same launch icon as Android
+4. Errors not reported when web content cannot load
+   Reproduce when running web content locally with no running host
+   Use ConsoleErrorReporter to report error
 
-3. Return object response to the SPA containing string fields for data + error
+5. Initial use of coroutines to call authenticator.getAccessToken
 
-4. Get error serialization working, including Swift call stack
+6. Get login redirect working
 
-5. Add main sample OAuth code + error handling
-
-6. Initial use of coroutines for getAccessToken
-
-7. Get login redirect working
-
-8. Get custom https scheme responses working
+7. Get custom https scheme responses working
    Add entitlements and update mobile assets file
 
-9. Errors not reported when web content cannot load
-   Reproduce when running web content locally with no running host
+8. Complete all OAuth methods
+
+9. Use same launch icon as Android
+
+10. Splash screen for startup - indicates 'Loading ...' by default
+    Also has a Reload button
+    Get rid of calls to ConsoleErrorReporter
+
+11. Concurrent Home clicks should not run code twice

@@ -7,29 +7,17 @@ import SwiftUI
  */
 class AppViewModel: ObservableObject {
 
-    // Global objects created after construction
+    // The configuration data is used by views
+    @Published var configuration: Configuration?
+
+    // The authenticator does OAuth work
     var authenticator: AuthenticatorImpl?
 
-    // State used by views
-    @Published var configuration: Configuration?
-    @Published var isInitialised = false
-    @Published var error: UIError?
-
     /*
-     * Initialise or reinitialise global objects, including processing configuration
+     * Read configuration and create global objects
      */
     func initialise() throws {
-
-        // Reset state flags
-        self.isInitialised = false
-
-        // Load the configuration from the embedded resource
         self.configuration = try ConfigurationLoader.load()
-
-        // Create the global authenticator
         self.authenticator = AuthenticatorImpl(configuration: self.configuration!.oauth)
-
-        // Indicate successful startup
-        self.isInitialised = true
     }
 }
