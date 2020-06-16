@@ -6,14 +6,18 @@ import WebKit
  */
 final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler {
 
-    private let request: URLRequest
+    private let appConfiguration: AppConfiguration?
+    private var bridge: JavascriptBridge
     private let width: CGFloat
     private let height: CGFloat
     private var webView: WKWebView?
-    private var bridge: JavascriptBridge
 
-    init(request: URLRequest, width: CGFloat, height: CGFloat) {
-        self.request = request
+    /*
+     * Store configuration and create the bridge object
+     */
+    init(appConfiguration: AppConfiguration?, width: CGFloat, height: CGFloat) {
+
+        self.appConfiguration = appConfiguration
         self.width = width
         self.height = height
         self.bridge = JavascriptBridgeImpl()
@@ -44,7 +48,13 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
      * Load the view's content
      */
     func updateUIView(_ webview: WKWebView, context: Context) {
-        webview.load(self.request)
+
+        if self.appConfiguration != nil {
+
+            let webViewUrl = URL(string: self.appConfiguration!.webBaseUrl)!
+            let request = URLRequest(url: webViewUrl)
+            webview.load(request)
+        }
     }
 
     /*
@@ -118,7 +128,18 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
     private func successResult(callbackName: String?, result: String) {
 
         if callbackName != nil {
-            let javascript = "window['\(callbackName!)']('\(result)')"
+            let javascript = "window['\(callbackName!)']('\(result)', null)"
+            self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
+        }
+    }
+
+    /*
+     * Return a failure result to the SPA
+     */
+    private func errorResult(callbackName: String?, result: String) {
+
+        if callbackName != nil {
+            let javascript = "window['\(callbackName!)'](null, '\(result)')"
             self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
         }
     }

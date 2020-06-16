@@ -16,6 +16,9 @@
 		4E07E3712497DDFA006B1A5A /* OktaLogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E36A2497DDFA006B1A5A /* OktaLogoutManager.swift */; };
 		4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */; };
 		4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */; };
+		4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */; };
+		4E4CFB172498B970005B4FD1 /* ErrorConsoleReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */; };
+		4E4CFB192498B976005B4FD1 /* ErrorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB182498B976005B4FD1 /* ErrorLine.swift */; };
 		4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7802490F17900ED60E5 /* AppDelegate.swift */; };
 		4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7822490F17900ED60E5 /* SceneDelegate.swift */; };
 		4E57F7852490F17900ED60E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* AppView.swift */; };
@@ -54,6 +57,9 @@
 		4E07E36A2497DDFA006B1A5A /* OktaLogoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OktaLogoutManager.swift; sourceTree = "<group>"; };
 		4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutManager.swift; sourceTree = "<group>"; };
 		4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentActionHandler.swift; sourceTree = "<group>"; };
+		4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorFormatter.swift; sourceTree = "<group>"; };
+		4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorConsoleReporter.swift; sourceTree = "<group>"; };
+		4E4CFB182498B976005B4FD1 /* ErrorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorLine.swift; sourceTree = "<group>"; };
 		4E57F77D2490F17900ED60E5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57F7802490F17900ED60E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E57F7822490F17900ED60E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,9 +109,9 @@
 			children = (
 				4E07E3642497DDFA006B1A5A /* Authenticator.swift */,
 				4E07E3652497DDFA006B1A5A /* AuthenticatorImpl.swift */,
-				4E07E3682497DDFA006B1A5A /* Logout */,
 				4E07E3672497DDFA006B1A5A /* TokenData.swift */,
 				4E07E3662497DDFA006B1A5A /* TokenStorage.swift */,
+				4E07E3682497DDFA006B1A5A /* Logout */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -161,7 +167,6 @@
 				4E57F7952490F21F00ED60E5 /* App */,
 				4E57F7A62491472900ED60E5 /* Configuration */,
 				4E57F79C24910BC300ED60E5 /* Plumbing */,
-				4E57F7962490F25800ED60E5 /* Views */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -175,22 +180,6 @@
 				4E07E3512497DCFA006B1A5A /* AppViewModel.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		4E57F7962490F25800ED60E5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4E57F7972490F4F300ED60E5 /* Utilities */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		4E57F7972490F4F300ED60E5 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				4E57F7982490F50500ED60E5 /* CustomWebView.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4E57F79C24910BC300ED60E5 /* Plumbing */ = {
@@ -207,6 +196,7 @@
 		4E57F7A12491418C00ED60E5 /* Interop */ = {
 			isa = PBXGroup;
 			children = (
+				4E57F7982490F50500ED60E5 /* CustomWebView.swift */,
 				4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */,
 				4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */,
 			);
@@ -229,7 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				4E57F7B0249147AD00ED60E5 /* ErrorCodes.swift */,
+				4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */,
+				4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */,
 				4E57F7B1249147AD00ED60E5 /* ErrorHandler.swift */,
+				4E4CFB182498B976005B4FD1 /* ErrorLine.swift */,
 				4E57F7B42491480C00ED60E5 /* UIError.swift */,
 			);
 			path = Errors;
@@ -373,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4CFB192498B976005B4FD1 /* ErrorLine.swift in Sources */,
 				4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */,
 				4E07E3702497DDFA006B1A5A /* CognitoLogoutManager.swift in Sources */,
 				4E57F7B52491480C00ED60E5 /* UIError.swift in Sources */,
@@ -386,6 +380,7 @@
 				4E57F79E2491329600ED60E5 /* JavascriptBridgeImpl.swift in Sources */,
 				4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */,
 				4E57F7AD2491472900ED60E5 /* OAuthConfiguration.swift in Sources */,
+				4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */,
 				4E57F7AE2491472900ED60E5 /* Configuration.swift in Sources */,
 				4E07E3712497DDFA006B1A5A /* OktaLogoutManager.swift in Sources */,
 				4E07E36C2497DDFA006B1A5A /* Authenticator.swift in Sources */,
@@ -396,6 +391,7 @@
 				4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */,
 				4E57F7852490F17900ED60E5 /* AppView.swift in Sources */,
 				4E57F7B2249147AD00ED60E5 /* ErrorCodes.swift in Sources */,
+				4E4CFB172498B970005B4FD1 /* ErrorConsoleReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

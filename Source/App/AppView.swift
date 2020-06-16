@@ -6,12 +6,9 @@ import SwiftUI
 struct AppView: View {
 
     @ObservedObject var model: AppViewModel
-    private var requestUrl: URLRequest
 
     init() {
         self.model = AppViewModel()
-        let webViewUrl = URL(string: "https://web.mycompany.com/spa")!
-        self.requestUrl = URLRequest(url: webViewUrl)
     }
 
     /*
@@ -21,8 +18,36 @@ struct AppView: View {
 
         GeometryReader { geometry in
             VStack {
-                CustomWebView(request: self.requestUrl, width: geometry.size.width, height: geometry.size.height)
+                CustomWebView(
+                    appConfiguration: self.model.configuration?.app,
+                    width: geometry.size.width,
+                    height: geometry.size.height)
             }
+            .onAppear(perform: self.initialiseApp)
         }
+    }
+
+    /*
+     * The main startup logic occurs after the initial render
+     */
+    private func initialiseApp() {
+
+        do {
+            // Initialise the model, which manages mutable data
+            try self.model.initialise()
+
+        } catch {
+
+            // Report error details
+            let uiError = ErrorHandler.fromException(error: error)
+            self.handleError(error: uiError)
+        }
+    }
+
+    /*
+     * For this sample we will simplify and just use console output of errors
+     */
+    private func handleError(error: UIError) {
+        ErrorConsoleReporter.output(error: error)
     }
 }

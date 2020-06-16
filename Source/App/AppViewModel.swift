@@ -8,17 +8,17 @@ import SwiftUI
 class AppViewModel: ObservableObject {
 
     // Global objects created after construction
-    private var configuration: Configuration?
     var authenticator: AuthenticatorImpl?
 
-    // State used by the view
+    // State used by views
+    @Published var configuration: Configuration?
     @Published var isInitialised = false
     @Published var error: UIError?
 
     /*
      * Initialise or reinitialise global objects, including processing configuration
      */
-    func initialise(onLoginRequired: @escaping () -> Void) throws {
+    func initialise() throws {
 
         // Reset state flags
         self.isInitialised = false
