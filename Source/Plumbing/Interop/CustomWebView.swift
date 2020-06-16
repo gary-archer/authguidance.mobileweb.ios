@@ -24,6 +24,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         self.authenticator = authenticator
         self.width = width
         self.height = height
+        print("CONSTRUCT")
     }
 
     /*
@@ -70,6 +71,15 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         _ userContentController: WKUserContentController,
         didReceive message: WKScriptMessage) {
 
+        // GJA: self.authenticator is null here, which occurs after the above???
+        print("USER CONTENT CONTROLLER")
+        if self.appConfiguration == nil {
+            print("CONFIG IS NULL")
+        }
+        if self.authenticator == nil {
+            print("AUTHENTICATOR IS NULL")
+        }
+
         // Get the JSON request data
         let data = (message.body as? String)!.data(using: .utf8)!
         if let requestJson = try? JSONSerialization.jsonObject(with: data, options: []) {
@@ -79,9 +89,6 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
 
                 let callbackName = requestFields["callbackName"] as? String
                 do {
-
-                    // GJA: self.authenticator is null here, which occurs after the above???
-                    print("USER CONTENT CONTROLLER")
 
                     // Handle the request
                     let bridge = JavascriptBridge(authenticator: self.authenticator)
