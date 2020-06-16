@@ -20,7 +20,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         self.appConfiguration = appConfiguration
         self.width = width
         self.height = height
-        self.bridge = JavascriptBridgeImpl()
+        self.bridge = JavascriptBridge()
     }
 
     /*
@@ -64,36 +64,30 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         _ userContentController: WKUserContentController,
         didReceive message: WKScriptMessage) {
 
-        // Deserialize
-        if let json = try? JSONSerialization.jsonObject(
-            with: (message.body as? String)!.data(using: .utf8)!,
-            options: []) {
+        // Get the JSON request data
+        let data = (message.body as? String)!.data(using: .utf8)!
+        if let requestJson = try? JSONSerialization.jsonObject(with: data, options: []) {
 
-            // Get fields
-            if let fields = json as? [String: Any] {
-                let methodName = fields["methodName"] as? String
-                let callbackName = fields["callbackName"] as? String
-                let logMessage = fields["message"] as? String
+            // Get a collection of top level fields
+            if let requestFields = requestJson as? [String: Any] {
 
-                // Process the request
-                var result = ""
-                switch methodName {
+                let callbackName = requestFields["callbackName"] as? String
+                do {
 
-                case "isLoggedIn":
-                    result = self.bridge.isLoggedIn()
+                    // Handle the request
+                    let data = try self.bridge.handleMessage(requestFields: requestFields)
 
-                case "getAccessToken":
-                    result = self.bridge.getAccessToken()
+                    // Return a success response, to resolve the promise in the calling Javascript
+                    if data != nil {
+                        self.successResult(callbackName: callbackName!, result: data!)
+                    }
 
-                case "refreshAccessToken":
-                    result = self.bridge.refreshAccessToken()
+                } catch {
 
-                default:
-                    self.bridge.log(message: logMessage)
+                    // Return an error response, to reject the promise in the calling Javascript
+                    let uiError = ErrorHandler.fromException(error: error)
+                    self.errorResult(callbackName: callbackName!, errorJson: uiError.toJson())
                 }
-
-                // Return the result, to end the promise in the mobile app when required
-                self.successResult(callbackName: callbackName, result: result)
             }
         }
     }
@@ -125,22 +119,18 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
     /*
      * Return a success result to the SPA
      */
-    private func successResult(callbackName: String?, result: String) {
+    private func successResult(callbackName: String, result: String) {
 
-        if callbackName != nil {
-            let javascript = "window['\(callbackName!)']('\(result)', null)"
-            self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
-        }
+        let javascript = "window['\(callbackName)']('\(result)', null)"
+        self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
     }
 
     /*
      * Return a failure result to the SPA
      */
-    private func errorResult(callbackName: String?, result: String) {
+    private func errorResult(callbackName: String, errorJson: String) {
 
-        if callbackName != nil {
-            let javascript = "window['\(callbackName!)'](null, '\(result)')"
-            self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
-        }
+        let javascript = "window['\(callbackName)'](null, '\(errorJson)')"
+        self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
     }
 }

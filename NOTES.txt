@@ -1,31 +1,23 @@
 TODO
 ----
-1. Get error serialization working, including Swift call stack
-   Step 1 is to just debug output the JSON
-   Test returns to SPA without problems
- 
-2. Finalise SPA mobile interop code
-   Can I consolidate Android and iOS / share classes?
- 
-3. Improve interop code to work out method name - does not belong in CustomWebView class
+1. Splash screen for startup - indicates 'Loading ...' by default
+   Also has a Reload button and displays an error summary link
 
-4. Errors not reported when web content cannot load
+2. Errors not reported when web content cannot load
    Reproduce when running web content locally with no running host
    Use ConsoleErrorReporter to report error
+   
+3. Return serialized error with stack trace as an object
 
-5. Initial use of coroutines to call authenticator.getAccessToken
+4. Initial use of coroutines to call authenticator.getAccessToken
 
-6. Get login redirect working
+5. Get login redirect working
 
-7. Get custom https scheme responses working
+6. Get custom https scheme logins working and response received
    Add entitlements and update mobile assets file
 
-8. Complete all OAuth methods
+7. Complete all OAuth methods
 
-9. Use same launch icon as Android
+8. Use same launch icon as Android
 
-10. Splash screen for startup - indicates 'Loading ...' by default
-    Also has a Reload button
-    Get rid of calls to ConsoleErrorReporter
-
-11. Concurrent Home clicks should not run code twice
+9. Concurrent Home clicks should not run code twice

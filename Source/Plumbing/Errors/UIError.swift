@@ -3,7 +3,7 @@ import SwiftUI
 /*
 * An error entity whose fields are rendered when there is a problem
 */
-class UIError: Error {
+class UIError: Error, Codable {
 
     // Fields populated during error translation
     var area: String
@@ -26,5 +26,39 @@ class UIError: Error {
         self.utcTime = ""
         self.stack = Thread.callStackSymbols
         self.utcTime = DateUtils.dateToUtcDisplayString(date: Date())
+    }
+
+    /*
+     * Return a JSON representation
+     */
+    func toJson() -> String {
+
+        // Create a dictionary
+        var data = [String: String]()
+        data["area"] = self.area
+        data["errorCode"] = self.errorCode
+        data["userMessage"] = self.userMessage
+
+        if !self.appAuthCode.isEmpty {
+            data["appAuthCode"] = self.appAuthCode
+        }
+
+        if !self.details.isEmpty {
+            data["details"] = self.details
+        }
+
+        if self.stack.count > 0 {
+            // data["stack"] = self.stack.joined(separator: "\n")
+        }
+
+        // Serialize the dictionary
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(data) {
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                return jsonString
+            }
+        }
+
+        return ""
     }
 }

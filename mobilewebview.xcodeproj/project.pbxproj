@@ -27,8 +27,7 @@
 		4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */; };
 		4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7982490F50500ED60E5 /* CustomWebView.swift */; };
 		4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F79A2490FBE900ED60E5 /* NOTES.txt */; };
-		4E57F79E2491329600ED60E5 /* JavascriptBridgeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */; };
-		4E57F7A0249138AB00ED60E5 /* JavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */; };
+		4E57F79E2491329600ED60E5 /* JavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F79D2491329600ED60E5 /* JavascriptBridge.swift */; };
 		4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */; };
 		4E57F7A52491468900ED60E5 /* mobile_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7A32491468900ED60E5 /* mobile_config.json */; };
 		4E57F7AB2491472900ED60E5 /* ConfigurationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7A72491472900ED60E5 /* ConfigurationLoader.swift */; };
@@ -70,8 +69,7 @@
 		4E57F78E2490F17A00ED60E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E57F7982490F50500ED60E5 /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		4E57F79A2490FBE900ED60E5 /* NOTES.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTES.txt; sourceTree = "<group>"; };
-		4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptBridgeImpl.swift; sourceTree = "<group>"; };
-		4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptBridge.swift; sourceTree = "<group>"; };
+		4E57F79D2491329600ED60E5 /* JavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptBridge.swift; sourceTree = "<group>"; };
 		4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobile_config_localapi.json; sourceTree = "<group>"; };
 		4E57F7A32491468900ED60E5 /* mobile_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobile_config.json; sourceTree = "<group>"; };
 		4E57F7A72491472900ED60E5 /* ConfigurationLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationLoader.swift; sourceTree = "<group>"; };
@@ -197,8 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				4E57F7982490F50500ED60E5 /* CustomWebView.swift */,
-				4E57F79F249138AB00ED60E5 /* JavascriptBridge.swift */,
-				4E57F79D2491329600ED60E5 /* JavascriptBridgeImpl.swift */,
+				4E57F79D2491329600ED60E5 /* JavascriptBridge.swift */,
 			);
 			path = Interop;
 			sourceTree = "<group>";
@@ -371,13 +368,12 @@
 				4E07E3702497DDFA006B1A5A /* CognitoLogoutManager.swift in Sources */,
 				4E57F7B52491480C00ED60E5 /* UIError.swift in Sources */,
 				4E07E36F2497DDFA006B1A5A /* TokenData.swift in Sources */,
-				4E57F7A0249138AB00ED60E5 /* JavascriptBridge.swift in Sources */,
 				4E57F7AC2491472900ED60E5 /* AppConfiguration.swift in Sources */,
 				4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */,
 				4E07E36D2497DDFA006B1A5A /* AuthenticatorImpl.swift in Sources */,
 				4E07E3522497DCFA006B1A5A /* AppViewModel.swift in Sources */,
 				4E07E36E2497DDFA006B1A5A /* TokenStorage.swift in Sources */,
-				4E57F79E2491329600ED60E5 /* JavascriptBridgeImpl.swift in Sources */,
+				4E57F79E2491329600ED60E5 /* JavascriptBridge.swift in Sources */,
 				4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */,
 				4E57F7AD2491472900ED60E5 /* OAuthConfiguration.swift in Sources */,
 				4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */,
