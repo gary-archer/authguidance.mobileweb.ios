@@ -11,7 +11,7 @@ class AppViewModel: ObservableObject {
     @Published var configuration: Configuration?
 
     // The authenticator does OAuth work
-    var authenticator: AuthenticatorImpl?
+    @Published var authenticator: Authenticator?
 
     /*
      * Read configuration and create global objects

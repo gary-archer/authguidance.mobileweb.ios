@@ -20,6 +20,7 @@ struct AppView: View {
             VStack {
                 CustomWebView(
                     appConfiguration: self.model.configuration?.app,
+                    authenticator: self.model.authenticator,
                     width: geometry.size.width,
                     height: geometry.size.height)
             }

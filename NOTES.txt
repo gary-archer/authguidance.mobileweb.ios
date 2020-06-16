@@ -1,23 +1,26 @@
 TODO
 ----
-1. Splash screen for startup - indicates 'Loading ...' by default
-   Also has a Reload button and displays an error summary link
+1. Get authenticator passed through to Javascript bridge
+   Call isLoggedIn, getAccessToken and getRefreshToken via coroutine
 
-2. Errors not reported when web content cannot load
-   Reproduce when running web content locally with no running host
-   Use ConsoleErrorReporter to report error
-   
-3. Return serialized error with stack trace as an object
+2. Get login redirect working
 
-4. Initial use of coroutines to call authenticator.getAccessToken
-
-5. Get login redirect working
-
-6. Get custom https scheme logins working and response received
+3. Get custom https scheme logins working and response received
    Add entitlements and update mobile assets file
 
-7. Complete all OAuth methods
+4. Complete all OAuth methods
 
-8. Use same launch icon as Android
+5. Errors not reported when web content cannot load
+   Reproduce when running web content locally with no running host
+   Use ConsoleErrorReporter to report error
+   May need navigation actions to handle:
+   http://onebigfunction.com/ios/2017/01/06/wknavigationdelegate-errors/
+
+6. Use same launch icon as Android
+
+7. Splash screen for startup - indicates 'Loading ...' by default
+   Also has a Reload button and displays an error summary link
+
+8. Return stack trace in serialized error
 
 9. Concurrent Home clicks should not run code twice

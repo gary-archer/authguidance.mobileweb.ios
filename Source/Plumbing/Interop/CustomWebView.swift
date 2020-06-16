@@ -7,7 +7,7 @@ import WebKit
 final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler {
 
     private let appConfiguration: AppConfiguration?
-    private var bridge: JavascriptBridge
+    private let authenticator: Authenticator?
     private let width: CGFloat
     private let height: CGFloat
     private var webView: WKWebView?
@@ -15,12 +15,15 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
     /*
      * Store configuration and create the bridge object
      */
-    init(appConfiguration: AppConfiguration?, width: CGFloat, height: CGFloat) {
+    init(appConfiguration: AppConfiguration?,
+         authenticator: Authenticator?,
+         width: CGFloat,
+         height: CGFloat) {
 
         self.appConfiguration = appConfiguration
+        self.authenticator = authenticator
         self.width = width
         self.height = height
-        self.bridge = JavascriptBridge()
     }
 
     /*
@@ -51,6 +54,9 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
 
         if self.appConfiguration != nil {
 
+            // GJA: self.authenticator is not null here???
+            print("UPDATE WEB VIEW")
+
             let webViewUrl = URL(string: self.appConfiguration!.webBaseUrl)!
             let request = URLRequest(url: webViewUrl)
             webview.load(request)
@@ -74,8 +80,12 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
                 let callbackName = requestFields["callbackName"] as? String
                 do {
 
+                    // GJA: self.authenticator is null here, which occurs after the above???
+                    print("USER CONTENT CONTROLLER")
+
                     // Handle the request
-                    let data = try self.bridge.handleMessage(requestFields: requestFields)
+                    let bridge = JavascriptBridge(authenticator: self.authenticator)
+                    let data = try bridge.handleMessage(requestFields: requestFields)
 
                     // Return a success response, to resolve the promise in the calling Javascript
                     if data != nil {

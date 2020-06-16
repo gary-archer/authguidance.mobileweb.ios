@@ -3,7 +3,13 @@ import Foundation
 /*
  * Receive Javascript requests, do the mobile work, then return a Javascript response
  */
-class JavascriptBridge {
+class JavascriptBridge: ObservableObject {
+
+    private let authenticator: Authenticator?
+
+    init(authenticator: Authenticator?) {
+        self.authenticator = authenticator
+    }
 
     /*
      * Handle incoming messages from Javascript
@@ -36,6 +42,11 @@ class JavascriptBridge {
      * Return true if logged in
      */
     private func isLoggedIn() throws -> String {
+
+        print("isLoggedIn called")
+        if self.authenticator != nil {
+            print("YAY - authenticator is not null")
+        }
 
         return String(false)
     }
