@@ -22,6 +22,7 @@ TODO
 7. Splash screen for startup - indicates 'Loading ...' by default
    Also has a Reload button and displays an error summary link
    Also will enable the SPA to start as external web content later
+   Same UI for Android
 
 8. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
