@@ -29,3 +29,5 @@ TODO
    Remains single line in the SPA case to enable copying of bundle stack traces
 
 9. Concurrent Home clicks should not run code twice
+
+10. Get rid of mobile page loading from my 3 APIs

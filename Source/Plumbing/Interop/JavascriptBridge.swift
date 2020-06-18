@@ -34,7 +34,19 @@ class JavascriptBridge: ObservableObject {
 
             case "refreshAccessToken":
                 result = try self.refreshAccessToken().await()
-                
+
+            case "startLogin":
+                result = try self.startLogin().await()
+
+            case "startLogout":
+                result = try self.startLogout().await()
+
+            case "expireAccessToken":
+                result = try self.expireAccessToken()
+
+            case "expireRefreshToken":
+                result = try self.expireRefreshToken()
+
             default:
                 self.log(message: requestFields["message"] as? String)
             }
@@ -61,7 +73,7 @@ class JavascriptBridge: ObservableObject {
     }
 
     /*
-     * Try to return an access token
+     * Handle SPA requests to get an access token
      */
     private func getAccessToken() throws -> CoFuture<String> {
 
@@ -79,7 +91,7 @@ class JavascriptBridge: ObservableObject {
     }
 
     /*
-     * Try to refresh an access token
+     * Handle SPA requests to refresh an access token
      */
     private func refreshAccessToken() throws -> CoFuture<String> {
 
@@ -94,6 +106,44 @@ class JavascriptBridge: ObservableObject {
         }
 
         return promise
+    }
+
+    /*
+     * Handle SPA requests to trigger a login redirect
+     */
+    private func startLogin() throws -> CoFuture<String> {
+
+        let promise = CoPromise<String>()
+        promise.fail(ErrorHandler.fromMessage(message: "Login not implemented"))
+        return promise
+    }
+
+    /*
+     * Handle SPA requests to trigger a logout redirect
+     */
+    private func startLogout() throws -> CoFuture<String> {
+
+        let promise = CoPromise<String>()
+        promise.fail(ErrorHandler.fromMessage(message: "Logout not implemented"))
+        return promise
+    }
+
+    /*
+     * Handle test requests from the SPA to expire the access token
+     */
+    private func expireAccessToken() throws -> String {
+
+        self.authenticator.expireAccessToken()
+        return ""
+    }
+
+    /*
+     * Handle test requests from the SPA to expire the access token
+     */
+    private func expireRefreshToken() throws -> String {
+
+        self.authenticator.expireRefreshToken()
+        return ""
     }
 
     /*
