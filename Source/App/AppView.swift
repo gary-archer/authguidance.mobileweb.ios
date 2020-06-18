@@ -19,7 +19,7 @@ struct AppView: View {
         GeometryReader { geometry in
             VStack {
                 CustomWebView(
-                    configuration: self.model.configuration,
+                    configurationAccessor: { self.model.configuration },
                     authenticatorAccessor: { self.model.authenticator },
                     width: geometry.size.width,
                     height: geometry.size.height)

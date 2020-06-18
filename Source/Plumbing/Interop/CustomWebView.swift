@@ -6,7 +6,7 @@ import WebKit
  */
 final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler {
 
-    private let configuration: Configuration?
+    private let configurationAccessor: () -> Configuration?
     private let authenticatorAccessor: () -> Authenticator?
     private let width: CGFloat
     private let height: CGFloat
@@ -15,12 +15,12 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
     /*
      * Store configuration and create the bridge object
      */
-    init(configuration: Configuration?,
+    init(configurationAccessor: @escaping () -> Configuration?,
          authenticatorAccessor: @escaping () -> Authenticator?,
          width: CGFloat,
          height: CGFloat) {
 
-        self.configuration = configuration
+        self.configurationAccessor = configurationAccessor
         self.authenticatorAccessor = authenticatorAccessor
         self.width = width
         self.height = height
@@ -52,9 +52,10 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
      */
     func updateUIView(_ webview: WKWebView, context: Context) {
 
-        if self.configuration != nil {
+        let configuration = self.configurationAccessor()
+        if configuration != nil {
 
-            let webViewUrl = URL(string: self.configuration!.app.webBaseUrl)!
+            let webViewUrl = URL(string: configuration!.app.webBaseUrl)!
             let request = URLRequest(url: webViewUrl)
             webview.load(request)
         }

@@ -3,14 +3,14 @@ TODO
 
 1. Call isLoggedIn, getAccessToken and getRefreshToken via coroutine
 
-2. Get login redirect working
+2. Get outgoing login redirect working
 
 3. Get custom https scheme logins working and response received
    Add entitlements and update mobile assets file
 
 4. Complete all OAuth methods
 
-1. Understand WKWebView operations better
+5. Understand WKWebView operations better
    Errors not reported when web content cannot load
    Reproduce when running web content locally with no running host
    Use ConsoleErrorReporter to report error
@@ -21,7 +21,10 @@ TODO
 
 7. Splash screen for startup - indicates 'Loading ...' by default
    Also has a Reload button and displays an error summary link
+   Also will enable the SPA to start as external web content later
 
-8. Return stack trace in serialized error
+8. Return stack trace in serialized error, which requires more serialization work
+   Improve Web UI error display to be multi line in the mobile case
+   Remains single line in the SPA case to enable copying of bundle stack traces
 
 9. Concurrent Home clicks should not run code twice
