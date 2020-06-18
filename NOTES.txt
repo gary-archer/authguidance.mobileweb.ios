@@ -1,33 +1,32 @@
 TODO
 ----
 
-1. Call isLoggedIn, getAccessToken and getRefreshToken via coroutine
+0. Outgoing login redirect problem
+   Company / User Info views get recreated when Continue is clicked in ASWebAuthenticationSession window
 
-2. Get outgoing login redirect working
-
-3. Get custom https scheme logins working and response received
+1. Get custom https scheme logins working and response received
    Add entitlements and update mobile assets file
 
-4. Complete all OAuth methods
-
-5. Understand WKWebView operations better
+2. Understand WKWebView operations better
    Errors not reported when web content cannot load
    Reproduce when running web content locally with no running host
    Use ConsoleErrorReporter to report error
    May need navigation actions to handle:
    http://onebigfunction.com/ios/2017/01/06/wknavigationdelegate-errors/
 
-6. Use same launch icon as Android
+3. Use same launch icon as Android
 
-7. Splash screen for startup - indicates 'Loading ...' by default
+4. Splash screen for startup - indicates 'Loading ...' by default
    Also has a Reload button and displays an error summary link
    Also will enable the SPA to start as external web content later
    Same UI for Android
 
-8. Return stack trace in serialized error, which requires more serialization work
+5. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
    Remains single line in the SPA case to enable copying of bundle stack traces
 
-9. Concurrent Home clicks should not run code twice
+6. Concurrent Home clicks should not run code twice
 
-10. Get rid of mobile page loading from my 3 APIs
+7. Get rid of mobile page loading from my 3 APIs
+
+8. Remove tokens on uninstall but not on upgrades

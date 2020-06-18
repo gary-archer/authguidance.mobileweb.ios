@@ -11,7 +11,7 @@ struct ConfigurationLoader {
     static func load() throws -> Configuration {
 
         // Load the configuration file
-        guard let filePath = Bundle.main.path(forResource: "mobile_config_localapi", ofType: "json") else {
+        guard let filePath = Bundle.main.path(forResource: "mobile_config", ofType: "json") else {
             throw ErrorHandler.fromMessage(message: "Unable to load mobile configuration file")
         }
 

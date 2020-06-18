@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import SwiftCoroutine
 
 /*
@@ -35,11 +36,11 @@ class JavascriptBridge: ObservableObject {
             case "refreshAccessToken":
                 result = try self.refreshAccessToken().await()
 
-            case "startLogin":
-                result = try self.startLogin().await()
+            case "login":
+                result = try self.login().await()
 
-            case "startLogout":
-                result = try self.startLogout().await()
+            case "logout":
+                result = try self.logout().await()
 
             case "expireAccessToken":
                 result = try self.expireAccessToken()
@@ -111,20 +112,62 @@ class JavascriptBridge: ObservableObject {
     /*
      * Handle SPA requests to trigger a login redirect
      */
-    private func startLogin() throws -> CoFuture<String> {
+    private func login() throws -> CoFuture<String> {
 
         let promise = CoPromise<String>()
-        promise.fail(ErrorHandler.fromMessage(message: "Login not implemented"))
+
+        // Run async operations in a coroutine
+        DispatchQueue.main.startCoroutine {
+
+            do {
+                // Do the login redirect on the UI thread
+                let response = try self.authenticator.startLogin(viewController: self.getHostingViewController())
+                    .await()
+
+                // Do the code exchange on a background thread
+                try DispatchQueue.global().await {
+                    try self.authenticator.finishLogin(authResponse: response)
+                        .await()
+                }
+
+                // Indicate success
+                promise.success("")
+
+            } catch {
+
+                // Indicate failure
+                promise.fail(error)
+            }
+        }
+
         return promise
     }
 
     /*
      * Handle SPA requests to trigger a logout redirect
      */
-    private func startLogout() throws -> CoFuture<String> {
+    private func logout() throws -> CoFuture<String> {
 
         let promise = CoPromise<String>()
-        promise.fail(ErrorHandler.fromMessage(message: "Logout not implemented"))
+
+        // Run async operations in a coroutine
+        DispatchQueue.main.startCoroutine {
+
+            do {
+                // Do the login redirect on the UI thread
+                try self.authenticator.logout(viewController: self.getHostingViewController())
+                    .await()
+
+                // Indicate success
+                promise.success("")
+
+            } catch {
+
+                // Indicate failure
+                promise.fail(error)
+            }
+        }
+
         return promise
     }
 
@@ -144,6 +187,15 @@ class JavascriptBridge: ObservableObject {
 
         self.authenticator.expireRefreshToken()
         return ""
+    }
+
+    /*
+     * A helper method to get the scene delegate, on which the login response is received
+     */
+    private func getHostingViewController() -> UIViewController {
+
+        let scene = UIApplication.shared.connectedScenes.first
+        return (scene!.delegate as? SceneDelegate)!.window!.rootViewController!
     }
 
     /*
