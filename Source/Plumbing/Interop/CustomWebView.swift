@@ -75,23 +75,27 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
             // Get a collection of top level fields
             if let requestFields = requestJson as? [String: Any] {
 
+                // Start a coroutine for async handling
                 let callbackName = requestFields["callbackName"] as? String
-                do {
+                DispatchQueue.main.startCoroutine {
 
-                    // Handle the request
-                    let bridge = JavascriptBridge(authenticator: self.authenticatorAccessor()!)
-                    let data = try bridge.handleMessage(requestFields: requestFields)
+                    do {
 
-                    // Return a success response, to resolve the promise in the calling Javascript
-                    if data != nil {
-                        self.successResult(callbackName: callbackName!, result: data!)
+                        // Call the implementation
+                        let bridge = JavascriptBridge(authenticator: self.authenticatorAccessor()!)
+                        let data = try bridge.handleMessage(requestFields: requestFields).await()
+
+                        // Return a success response, to resolve the promise in the calling Javascript
+                        if data != nil {
+                            self.successResult(callbackName: callbackName!, result: data!)
+                        }
+
+                    } catch {
+
+                        // Return an error response, to reject the promise in the calling Javascript
+                        let uiError = ErrorHandler.fromException(error: error)
+                        self.errorResult(callbackName: callbackName!, errorJson: uiError.toJson())
                     }
-
-                } catch {
-
-                    // Return an error response, to reject the promise in the calling Javascript
-                    let uiError = ErrorHandler.fromException(error: error)
-                    self.errorResult(callbackName: callbackName!, errorJson: uiError.toJson())
                 }
             }
         }

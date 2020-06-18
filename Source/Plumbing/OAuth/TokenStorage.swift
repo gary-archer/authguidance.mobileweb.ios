@@ -7,7 +7,7 @@ import SwiftKeychainWrapper
 class TokenStorage {
 
     private var tokenData: TokenData?
-    private let storageKey = "com.authguidance.basicmobileapp.tokendata"
+    private let storageKey = "com.authguidance.mobilewebview.tokendata"
 
     /*
      * Load tokens when first requested

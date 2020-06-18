@@ -1,4 +1,5 @@
 import Foundation
+import SwiftCoroutine
 
 /*
  * Receive Javascript requests, do the mobile work, then return a Javascript response
@@ -14,28 +15,40 @@ class JavascriptBridge: ObservableObject {
     /*
      * Handle incoming messages from Javascript
      */
-    func handleMessage(requestFields: [String: Any]) throws -> String? {
+    func handleMessage(requestFields: [String: Any]) throws -> CoFuture<String?> {
 
+        let promise = CoPromise<String?>()
         var result: String?
 
-        // Call the appropriate method based on input
-        let methodName = requestFields["methodName"] as? String
-        switch methodName {
+        do {
 
-        case "isLoggedIn":
-            result = try self.isLoggedIn()
+            // Determine and call the method
+            let methodName = requestFields["methodName"] as? String
+            switch methodName {
 
-        case "getAccessToken":
-            result = try self.getAccessToken()
+            case "isLoggedIn":
+                result = try self.isLoggedIn()
 
-        case "refreshAccessToken":
-            result = try self.refreshAccessToken()
+            case "getAccessToken":
+                result = try self.getAccessToken().await()
 
-        default:
-            self.log(message: requestFields["message"] as? String)
+            case "refreshAccessToken":
+                result = try self.refreshAccessToken().await()
+                
+            default:
+                self.log(message: requestFields["message"] as? String)
+            }
+
+            // Return a success result
+            promise.success(result)
+
+        } catch {
+
+            // Return a failure result
+            promise.fail(error)
         }
 
-        return result
+        return promise
     }
 
     /*
@@ -43,26 +56,44 @@ class JavascriptBridge: ObservableObject {
      */
     private func isLoggedIn() throws -> String {
 
-        print("isLoggedIn called")
-        return String(false)
+        let isLoggedIn = self.authenticator.isLoggedIn()
+        return String(isLoggedIn)
     }
 
     /*
      * Try to return an access token
      */
-    private func getAccessToken() throws -> String {
+    private func getAccessToken() throws -> CoFuture<String> {
 
-        throw ErrorHandler.fromMessage(message: "getAccessToken went horribly wrong")
-        // return "y802efhu0"
+        let promise = CoPromise<String>()
+
+        do {
+            let accessToken = try self.authenticator.getAccessToken().await()
+            promise.success(accessToken)
+
+        } catch {
+            promise.fail(error)
+        }
+
+        return promise
     }
 
     /*
      * Try to refresh an access token
      */
-    private func refreshAccessToken() throws -> String {
+    private func refreshAccessToken() throws -> CoFuture<String> {
 
-        throw ErrorHandler.fromMessage(message: "refreshAccessToken went horribly wrong")
-        // return ""
+        let promise = CoPromise<String>()
+
+        do {
+            let accessToken = try self.authenticator.refreshAccessToken().await()
+            promise.success(accessToken)
+
+        } catch {
+            promise.fail(error)
+        }
+
+        return promise
     }
 
     /*
