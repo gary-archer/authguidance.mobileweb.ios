@@ -1,32 +1,36 @@
 TODO
 ----
-
-0. Outgoing login redirect problem
+1. Outgoing login redirect problem
+   Seems to be ReactJS binding related
    Company / User Info views get recreated when Continue is clicked in ASWebAuthenticationSession window
+   Could be because when I set location.hash to #/loggedout it does not seem to stick
+   React app.tsx render method is called again and isLoggedIn gets called
 
-1. Get custom https scheme logins working and response received
+2. Get custom https scheme logins working and response received
    Add entitlements and update mobile assets file
 
-2. Understand WKWebView operations better
+3. Complete all OAuth behaviour
+
+4. Understand WKWebView operations better
    Errors not reported when web content cannot load
    Reproduce when running web content locally with no running host
    Use ConsoleErrorReporter to report error
    May need navigation actions to handle:
    http://onebigfunction.com/ios/2017/01/06/wknavigationdelegate-errors/
 
-3. Use same launch icon as Android
+5. Use same launch icon as Android
 
-4. Splash screen for startup - indicates 'Loading ...' by default
+6. Splash screen for startup - indicates 'Loading ...' by default
    Also has a Reload button and displays an error summary link
    Also will enable the SPA to start as external web content later
-   Same UI for Android
+   Do the same for Android
 
-5. Return stack trace in serialized error, which requires more serialization work
+7. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
    Remains single line in the SPA case to enable copying of bundle stack traces
 
-6. Concurrent Home clicks should not run code twice
+8. Concurrent Home clicks should not run code twice
 
-7. Get rid of mobile page loading from my 3 APIs
+9. Get rid of mobile page loading from my 3 APIs
 
-8. Remove tokens on uninstall but not on upgrades
+10. Remove tokens on uninstall but not on upgrades
