@@ -6,8 +6,8 @@ import WebKit
  */
 final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler {
 
-    private let appConfiguration: AppConfiguration?
-    private let authenticator: Authenticator?
+    private let configuration: Configuration?
+    private let authenticatorAccessor: () -> Authenticator?
     private let width: CGFloat
     private let height: CGFloat
     private var webView: WKWebView?
@@ -15,16 +15,15 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
     /*
      * Store configuration and create the bridge object
      */
-    init(appConfiguration: AppConfiguration?,
-         authenticator: Authenticator?,
+    init(configuration: Configuration?,
+         authenticatorAccessor: @escaping () -> Authenticator?,
          width: CGFloat,
          height: CGFloat) {
 
-        self.appConfiguration = appConfiguration
-        self.authenticator = authenticator
+        self.configuration = configuration
+        self.authenticatorAccessor = authenticatorAccessor
         self.width = width
         self.height = height
-        print("CONSTRUCT")
     }
 
     /*
@@ -53,12 +52,9 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
      */
     func updateUIView(_ webview: WKWebView, context: Context) {
 
-        if self.appConfiguration != nil {
+        if self.configuration != nil {
 
-            // GJA: self.authenticator is not null here???
-            print("UPDATE WEB VIEW")
-
-            let webViewUrl = URL(string: self.appConfiguration!.webBaseUrl)!
+            let webViewUrl = URL(string: self.configuration!.app.webBaseUrl)!
             let request = URLRequest(url: webViewUrl)
             webview.load(request)
         }
@@ -71,15 +67,6 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         _ userContentController: WKUserContentController,
         didReceive message: WKScriptMessage) {
 
-        // GJA: self.authenticator is null here, which occurs after the above???
-        print("USER CONTENT CONTROLLER")
-        if self.appConfiguration == nil {
-            print("CONFIG IS NULL")
-        }
-        if self.authenticator == nil {
-            print("AUTHENTICATOR IS NULL")
-        }
-
         // Get the JSON request data
         let data = (message.body as? String)!.data(using: .utf8)!
         if let requestJson = try? JSONSerialization.jsonObject(with: data, options: []) {
@@ -91,7 +78,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
                 do {
 
                     // Handle the request
-                    let bridge = JavascriptBridge(authenticator: self.authenticator)
+                    let bridge = JavascriptBridge(authenticator: self.authenticatorAccessor()!)
                     let data = try bridge.handleMessage(requestFields: requestFields)
 
                     // Return a success response, to resolve the promise in the calling Javascript

@@ -5,9 +5,9 @@ import Foundation
  */
 class JavascriptBridge: ObservableObject {
 
-    private let authenticator: Authenticator?
+    private let authenticator: Authenticator
 
-    init(authenticator: Authenticator?) {
+    init(authenticator: Authenticator) {
         self.authenticator = authenticator
     }
 
@@ -44,10 +44,6 @@ class JavascriptBridge: ObservableObject {
     private func isLoggedIn() throws -> String {
 
         print("isLoggedIn called")
-        if self.authenticator != nil {
-            print("YAY - authenticator is not null")
-        }
-
         return String(false)
     }
 
