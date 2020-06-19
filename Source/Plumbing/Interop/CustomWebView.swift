@@ -10,6 +10,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
     private let authenticatorAccessor: () -> Authenticator?
     private let width: CGFloat
     private let height: CGFloat
+    private var loaded: Bool
     private var webView: WKWebView?
 
     /*
@@ -24,6 +25,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         self.authenticatorAccessor = authenticatorAccessor
         self.width = width
         self.height = height
+        self.loaded = false
     }
 
     /*
@@ -52,12 +54,19 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
      */
     func updateUIView(_ webview: WKWebView, context: Context) {
 
+        // Wait until the app has loaded the configuration file
         let configuration = self.configurationAccessor()
         if configuration != nil {
 
-            let webViewUrl = URL(string: configuration!.app.webBaseUrl)!
-            let request = URLRequest(url: webViewUrl)
-            webview.load(request)
+            // Prevent SwiftUI causing subsequent reloads of the ReactJS app
+            if !self.loaded {
+
+                // Load the SPA base URL
+                let webViewUrl = URL(string: configuration!.app.webBaseUrl)!
+                let request = URLRequest(url: webViewUrl)
+                webview.load(request)
+                self.loaded = true
+            }
         }
     }
 

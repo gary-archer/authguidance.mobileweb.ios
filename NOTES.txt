@@ -1,29 +1,27 @@
-TODO
-----
-1. Outgoing login redirect problem
-   Seems to be ReactJS binding related
-   Company / User Info views get recreated when Continue is clicked in ASWebAuthenticationSession window
-   Could be because when I set location.hash to #/loggedout it does not seem to stick
-   React app.tsx render method is called again and isLoggedIn gets called
+1. Get custom https scheme logins working and response received
+   Add entitlements to mobile app
+   Update hosted mobile assets file
 
-2. Get custom https scheme logins working and response received
-   Add entitlements and update mobile assets file
+2. Use same launch icon as Android
 
-3. Complete all OAuth behaviour
+3. Complete testing of all OAuth behaviour
+   Includes install on iPad
 
-4. Understand WKWebView operations better
-   Errors not reported when web content cannot load
-   Reproduce when running web content locally with no running host
+4. Get rid of mobile page loading from my 3 APIs
+
+5. Understand WKWebView operations better
+   Errors not reported when web content cannot load, eg SPA host not running
    Use ConsoleErrorReporter to report error
    May need navigation actions to handle:
    http://onebigfunction.com/ios/2017/01/06/wknavigationdelegate-errors/
 
-5. Use same launch icon as Android
-
-6. Splash screen for startup - indicates 'Loading ...' by default
-   Also has a Reload button and displays an error summary link
-   Also will enable the SPA to start as external web content later
-   Do the same for Android
+6. Mobile Splash / Home screen (iOS and Android)
+   Loading message
+   Error Summary Display
+   Retry button
+   Later will show options to Load SPA:
+   * Web View
+   * External web content
 
 7. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
@@ -31,6 +29,6 @@ TODO
 
 8. Concurrent Home clicks should not run code twice
 
-9. Get rid of mobile page loading from my 3 APIs
+9. Remove tokens on uninstall but not on upgrades
 
-10. Remove tokens on uninstall but not on upgrades
+10. Rename samples + namespaces to webintegration
