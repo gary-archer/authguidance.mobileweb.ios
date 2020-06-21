@@ -8,9 +8,12 @@ struct ErrorHandler {
     static let AppAuthNamespace = "org.openid.appauth."
 
     /*
-     * Return a typed error from a general UI exception
+     * Translate a general exception into a form ready for display
      */
-    static func fromException(error: Error) -> UIError {
+    static func fromException(
+        error: Error,
+        errorCode: String? = nil,
+        userMessage: String? = nil) -> UIError {
 
         // Already handled
         var uiError = error as? UIError
@@ -18,11 +21,15 @@ struct ErrorHandler {
             return uiError!
         }
 
-        // Create the error
+        // Initialise top level fields
+        let message = userMessage != nil ? userMessage! : "A technical problem was encountered in the UI"
+        let code = errorCode != nil ? errorCode! : ErrorCodes.generalUIError
+
+        // Create the error object
         uiError = UIError(
             area: "Mobile UI",
-            errorCode: ErrorCodes.generalUIError,
-            userMessage: "A technical problem was encountered in the UI")
+            errorCode: code,
+            userMessage: message)
 
         // Update from the caught exception
         ErrorHandler.updateFromException(error: error, uiError: uiError!)
@@ -96,13 +103,8 @@ struct ErrorHandler {
             userMessage: "A technical problem occurred during login processing"
         )
 
-        // Update it from the expcetion
-        if ErrorHandler.isAppAuthError(error: error) {
-            ErrorHandler.updateFromAppAuthException(error: error, uiError: uiError!)
-        } else {
-            ErrorHandler.updateFromException(error: error, uiError: uiError!)
-        }
-
+        // Update it from the exception
+        ErrorHandler.updateFromException(error: error, uiError: uiError!)
         return uiError!
     }
 
@@ -123,13 +125,8 @@ struct ErrorHandler {
             userMessage: "A technical problem occurred during login processing"
         )
 
-        // Update it from the expcetion
-        if ErrorHandler.isAppAuthError(error: error) {
-            ErrorHandler.updateFromAppAuthException(error: error, uiError: uiError!)
-        } else {
-            ErrorHandler.updateFromException(error: error, uiError: uiError!)
-        }
-
+        // Update it from the exception
+        ErrorHandler.updateFromException(error: error, uiError: uiError!)
         return uiError!
     }
 
@@ -150,13 +147,8 @@ struct ErrorHandler {
             errorCode: ErrorCodes.logoutRequestFailed,
             userMessage: "A technical problem occurred during logout processing")
 
-        // Update it from the expcetion
-        if ErrorHandler.isAppAuthError(error: error) {
-            ErrorHandler.updateFromAppAuthException(error: error, uiError: uiError!)
-        } else {
-            ErrorHandler.updateFromException(error: error, uiError: uiError!)
-        }
-
+        // Update it from the exception
+        ErrorHandler.updateFromException(error: error, uiError: uiError!)
         return uiError!
     }
 
@@ -177,38 +169,9 @@ struct ErrorHandler {
             errorCode: errorCode,
             userMessage: "A technical problem occurred during token processing")
 
-        // Update it from the expcetion
-        if ErrorHandler.isAppAuthError(error: error) {
-            ErrorHandler.updateFromAppAuthException(error: error, uiError: uiError!)
-        } else {
-            ErrorHandler.updateFromException(error: error, uiError: uiError!)
-        }
-
+        // Update it from the exception
+        ErrorHandler.updateFromException(error: error, uiError: uiError!)
         return uiError!
-    }
-
-    /*
-     * See if the error was returned from AppAuth libraries
-     */
-    private static func isAppAuthError(error: Error) -> Bool {
-
-        let authError = error as NSError
-        return authError.domain.contains(ErrorHandler.AppAuthNamespace)
-    }
-
-    /*
-     * Get details from the AppAuth error
-     */
-    private static func updateFromAppAuthException(error: Error, uiError: UIError) {
-
-        let authError = error as NSError
-
-        // Get the AppAuth error category from the domain field and shorten it for readability
-        let category = ErrorHandler.getAppAuthCategory(domain: authError.domain)
-
-        // Set other fields from the AppAuth error and extract the error code
-        uiError.details = authError.localizedDescription
-        uiError.appAuthCode = "\(category) / \(authError.code)"
     }
 
     /*
@@ -219,6 +182,7 @@ struct ErrorHandler {
         let nsError = error as NSError
         var details = error.localizedDescription
 
+        // Get iOS common details
         if nsError.domain.count > 0 {
             details += "\nDomain: \(nsError.domain)"
         }
@@ -227,6 +191,12 @@ struct ErrorHandler {
         }
         for (name, value) in nsError.userInfo {
             details += "\n\(name): \(value)"
+        }
+
+        // Get details to assist with lookups in AppAuth error files
+        if nsError.domain.contains(ErrorHandler.AppAuthNamespace) {
+            let category = ErrorHandler.getAppAuthCategory(domain: nsError.domain)
+            uiError.appAuthCode = "\(category) / \(nsError.code)"
         }
 
         uiError.details = details

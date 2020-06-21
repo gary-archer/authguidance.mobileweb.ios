@@ -20,11 +20,17 @@ struct ConfigurationLoader {
         let jsonData = jsonText.data(using: .utf8)!
         let decoder = JSONDecoder()
 
-        // Deserialize into an object
-        if let configuration = try? decoder.decode(Configuration.self, from: jsonData) {
-            return configuration
-        } else {
-            throw ErrorHandler.fromMessage(message: "Unable to deserialize mobile configuration file JSON data")
+        do {
+            // Try to deserialize into an object
+            return try decoder.decode(Configuration.self, from: jsonData)
+
+        } catch {
+
+            // Handle errors
+            throw ErrorHandler.fromException(
+                error: error,
+                errorCode: ErrorCodes.configurationError,
+                userMessage: "Unable to deserialize mobile configuration file JSON data")
         }
     }
 }

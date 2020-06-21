@@ -1,17 +1,10 @@
 WEB INTEGRATION
 ---------------
-1. Load config should not be fromMessage - and should have its own error code
-   tryDecode and capturing the exception
+1. Update device installs of both apps
 
 2. Use an orientation handler to improve text about SPA and error displays
 
 3. Test logout request errors with an exception on the mobile side
-
-4. Render extended error info in main sample
-   general ui error code first
-
-5. Update main iOS sample with extended error info
-   Update device installs of both apps
 
 6. Update Android web view sample with home screen changes
    Update device installs opf mobile web app

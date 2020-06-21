@@ -17,9 +17,10 @@ struct AppView: View {
      */
     var body: some View {
 
-        // Get dimensions
+        // Get sizes
         let deviceWidth = UIScreen.main.bounds.size.width
         let deviceHeight = UIScreen.main.bounds.size.height
+        let textFont = deviceWidth < 768 ? Font.system(.caption) : Font.system(.body)
 
         // The user must be logged into the app in order to pass a token to the system browser
         var isInvokeSystemBrowserDisabled = true
@@ -60,19 +61,19 @@ struct AppView: View {
                 HStack {
 
                     Text("""
-                        Run secured views from the Single Page Application in a WKWebView control.
+                        Run secured views from the Single Page Application in a WKWebView control.\n
                         The SPA will call back the mobile host to perform logins and to get tokens.
                         """)
                         .frame(width: deviceWidth * 0.4)
-                        .font(Font.system(.caption))
+                        .font(textFont)
                         .padding()
 
                     Text("""
-                         Run the secured Single Page Application by opening it in the system browser.
+                         Run the secured Single Page Application by opening it in the system browser.\n
                          An encrypted one time token is sent to the SPA so that login is automatic.
                          """)
                         .frame(width: deviceWidth * 0.4)
-                        .font(Font.system(.caption))
+                        .font(textFont)
                         .padding()
                 }
             }
@@ -125,13 +126,11 @@ struct AppView: View {
      */
     private func onHome() {
 
-        // In case there was a startup problem, retry when the header text is clicked
+        self.model.error = nil
+        self.runningWebView = false
         if !self.model.isInitialised {
             self.initialiseApp()
         }
-
-        self.model.error = nil
-        self.runningWebView = false
     }
 
     /*

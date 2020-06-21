@@ -8,6 +8,9 @@ struct ErrorCodes {
     // A general exception in the UI
     static let generalUIError = "ui_error"
 
+    // A problem loading configuration
+    static let configurationError = "configuration_error"
+
     // A general exception in the UI
     static let loadWebViewFailed = "load_web_view"
 
