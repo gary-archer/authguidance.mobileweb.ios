@@ -21,10 +21,13 @@ struct AppView: View {
         let deviceWidth = UIScreen.main.bounds.size.width
         let deviceHeight = UIScreen.main.bounds.size.height
 
-        // Get styles for buttons
-        let enabledButtonStyle = HeaderButtonStyle(width: deviceWidth * 0.4, disabled: false)
-        let disabledButtonStyle = HeaderButtonStyle(width: deviceWidth * 0.4, disabled: true)
+        // The user must be logged into the app in order to pass a token to the system browser
+        var isInvokeSystemBrowserDisabled = true
+        if self.model.authenticator != nil && self.model.authenticator!.isLoggedIn() {
+            isInvokeSystemBrowserDisabled = false
+        }
 
+        // Render the
         return VStack {
 
             // Show the header
@@ -43,12 +46,14 @@ struct AppView: View {
                     Button(action: self.onInvokeWebView) {
                        Text("Run SPA in Web View")
                     }
-                    .buttonStyle(enabledButtonStyle)
+                    .buttonStyle(HeaderButtonStyle(width: deviceWidth * 0.4, disabled: false))
+                    .disabled(false)
 
                     Button(action: self.onInvokeSystemBrowser) {
-                       Text("Run SPA in System Browser")
+                       Text("Run SPA in Browser")
                     }
-                    .buttonStyle(self.model.authenticator!.isLoggedIn() ? enabledButtonStyle : disabledButtonStyle)
+                    .buttonStyle(HeaderButtonStyle(width: deviceWidth * 0.4, disabled: isInvokeSystemBrowserDisabled))
+                    .disabled(isInvokeSystemBrowserDisabled)
                 }
 
                 // Show some explanatory text
@@ -82,7 +87,7 @@ struct AppView: View {
                         .padding(.bottom)
             }
 
-            // Render the web view in the remaining space
+            // Render the web view
             if self.runningWebView && self.model.error == nil {
 
                 CustomWebView(
