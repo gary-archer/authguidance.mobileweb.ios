@@ -43,10 +43,10 @@ class UIError: Error, Codable {
             data["appAuthCode"] = self.appAuthCode
         }
 
+        // These fields are serialized as base 64 to prevent issues with dangerous characters
         if !self.details.isEmpty {
             data["details"] = self.details.data(using: .utf8)!.base64EncodedString()
         }
-
         if self.stack.count > 0 {
             let stackString = self.stack.joined(separator: "\n")
             data["stack"] = stackString.data(using: .utf8)!.base64EncodedString()
