@@ -1,6 +1,4 @@
-1. Get custom https scheme logins working and response received
-   Add entitlements to mobile app
-   Update hosted mobile assets file
+1. Get custom https scheme login response working
 
 2. Use same launch icon as Android
 

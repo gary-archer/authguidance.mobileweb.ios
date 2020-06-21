@@ -7,6 +7,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var appView: AppView?
 
     /*
      * Use this method to optionally configure and attach the UIWindow to the provided UIWindowScene
@@ -24,10 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             // Create the main view
             let window = UIWindow(windowScene: windowScene)
-            let appView = AppView()
+            self.appView = AppView()
 
             // Finish window creation
-            window.rootViewController = UIHostingController(rootView: appView)
+            window.rootViewController = UIHostingController(rootView: self.appView)
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -40,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
 
         if userActivity.webpageURL != nil {
-            /* self.viewRouter.handleDeepLink(url: userActivity.webpageURL!) */
+            self.appView?.handleDeepLink(url: userActivity.webpageURL!)
         }
     }
 

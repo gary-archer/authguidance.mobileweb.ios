@@ -20,4 +20,15 @@ class AppViewModel: ObservableObject {
         self.configuration = try ConfigurationLoader.load()
         self.authenticator = AuthenticatorImpl(configuration: self.configuration!.oauth)
     }
+
+    /*
+     * Process any claimed HTTPS scheme login / logout responses
+     */
+    func handleOAuthResponse(url: URL) {
+
+        // If this is not a login or logout response, the view router handles the deep link
+        if self.authenticator!.isOAuthResponse(responseUrl: url) {
+            self.authenticator!.resumeOperation(responseUrl: url)
+        }
+    }
 }

@@ -46,6 +46,13 @@ struct AppView: View {
     }
 
     /*
+     * Login and logout responses for claimed HTTPS schemes are received here
+     */
+    func handleDeepLink(url: URL) {
+        self.model.handleOAuthResponse(url: url)
+    }
+
+    /*
      * For this sample we will simplify and just use console output of errors
      */
     private func handleError(error: UIError) {
