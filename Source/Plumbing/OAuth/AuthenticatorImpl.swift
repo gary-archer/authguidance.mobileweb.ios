@@ -395,7 +395,7 @@ class AuthenticatorImpl: Authenticator {
                 grantType: OIDGrantTypeRefreshToken,
                 authorizationCode: nil,
                 redirectURL: nil,
-                clientID: self.configuration.clientId + "x",
+                clientID: self.configuration.clientId,
                 clientSecret: nil,
                 scope: nil,
                 refreshToken: tokenData!.refreshToken!,

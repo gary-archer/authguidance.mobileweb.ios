@@ -2,13 +2,19 @@ WEB INTEGRATION PHASE 1
 -----------------------
 1. Update Android web view sample with home screen changes
    
-2. Intercept web view errors on Android in the same way as iOS?
+2. Intercept web view load errors on Android in the same way as iOS?
+   The goal is a more controlled display
+   
+3. Think a bit more about displaying stack trace in debug v release builds
+   Same info should be available in PROD but not rendered
 
 WEB INTEGRATION NEXT
 -----------------------
-1. Rename to mobileweb
+1. Rename samples from mobilewebview to mobileweb
+   Update deep linking assets files and OAuth trust entries
 
-2. Get open without passing token working
+2. Get basics of opening with system browser working
+   This will require an SPA login which is expected
 
 3. Develop small Security API for one time tokens as its own repo
    This will be a small Serverless API that uses DynamoDB and can be tested in isolation
