@@ -6,7 +6,7 @@ import SwiftUI
 struct AppView: View {
 
     @ObservedObject var model: AppViewModel
-    @State private var runningInWebView = false
+    @State private var runningWebView = false
 
     init() {
         self.model = AppViewModel()
@@ -17,10 +17,13 @@ struct AppView: View {
      */
     var body: some View {
 
+        // Get dimensions
         let deviceWidth = UIScreen.main.bounds.size.width
         let deviceHeight = UIScreen.main.bounds.size.height
-        let enabledStyle = HeaderButtonStyle(width: deviceWidth * 0.4, disabled: false)
-        let disabledStyle = HeaderButtonStyle(width: deviceWidth * 0.4, disabled: true)
+
+        // Get styles for buttons
+        let enabledButtonStyle = HeaderButtonStyle(width: deviceWidth * 0.4, disabled: false)
+        let disabledButtonStyle = HeaderButtonStyle(width: deviceWidth * 0.4, disabled: true)
 
         return VStack {
 
@@ -32,20 +35,20 @@ struct AppView: View {
                 .padding(.bottom)
                 .onTapGesture(perform: self.onHome)
 
-            if !runningInWebView {
+            if self.model.isInitialised && !self.runningWebView {
 
                 // Allow the user to choose how to execute the web content
                 HStack {
 
-                    Button(action: self.onWebView) {
+                    Button(action: self.onInvokeWebView) {
                        Text("Run SPA in Web View")
                     }
-                    .buttonStyle(enabledStyle)
+                    .buttonStyle(enabledButtonStyle)
 
-                    Button(action: self.onSystemBrowser) {
+                    Button(action: self.onInvokeSystemBrowser) {
                        Text("Run SPA in System Browser")
                     }
-                    .buttonStyle(disabledStyle)
+                    .buttonStyle(self.model.authenticator!.isLoggedIn() ? enabledButtonStyle : disabledButtonStyle)
                 }
 
                 // Show some explanatory text
@@ -69,7 +72,7 @@ struct AppView: View {
                 }
             }
 
-            // Display application level mobile errors if applicable
+            // Display application level errors when applicable
             if self.model.error != nil {
 
                 ErrorSummaryView(
@@ -80,10 +83,12 @@ struct AppView: View {
             }
 
             // Render the web view in the remaining space
-            if self.runningInWebView {
+            if self.runningWebView && self.model.error == nil {
+
                 CustomWebView(
                     configurationAccessor: { self.model.configuration },
                     authenticatorAccessor: { self.model.authenticator },
+                    onLoadError: self.handleError,
                     width: deviceWidth,
                     height: deviceHeight)
             }
@@ -111,24 +116,30 @@ struct AppView: View {
     }
 
     /*
-     * Update state to show the web view
+     * When the header text is clicked, reset state and show the mobile selection screen again
      */
-    private func onWebView() {
-        self.runningInWebView = true
+    private func onHome() {
+
+        // In case there was a startup problem, retry when the header text is clicked
+        if !self.model.isInitialised {
+            self.initialiseApp()
+        }
+
+        self.model.error = nil
+        self.runningWebView = false
+    }
+
+    /*
+     * Update state to render the web view
+     */
+    private func onInvokeWebView() {
+        self.runningWebView = true
     }
 
     /*
      * Update state to show the system browser
      */
-    private func onSystemBrowser() {
-        print("Invoking the SPA in the System Browser is not yet implemented")
-    }
-
-    /*
-     * When the header text is clicked, reset state and show the mobile selection screen again
-     */
-    private func onHome() {
-        self.runningInWebView = false
+    private func onInvokeSystemBrowser() {
     }
 
     /*
@@ -136,5 +147,12 @@ struct AppView: View {
      */
     func handleDeepLink(url: URL) {
         self.model.handleOAuthResponse(url: url)
+    }
+
+    /*
+     * Receive errors from other parts of the app
+     */
+    func handleError(error: UIError) {
+        self.model.error = error
     }
 }

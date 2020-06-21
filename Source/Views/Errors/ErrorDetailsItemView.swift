@@ -19,8 +19,14 @@ struct ErrorDetailsItemView: View {
     var body: some View {
 
         HStack(alignment: .top) {
+
             Text(self.errorLine.name)
                 .labelStyle()
+                .frame(width: self.dialogWidth / 3, alignment: .leading)
+                .padding(.leading, self.dialogWidth / 12)
+
+            Text(self.errorLine.value)
+                .valueStyle()
                 .frame(width: self.dialogWidth / 3, alignment: .leading)
                 .padding(.leading, self.dialogWidth / 12)
 

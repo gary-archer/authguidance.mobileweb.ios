@@ -17,7 +17,6 @@
 		4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */; };
 		4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */; };
 		4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */; };
-		4E4CFB172498B970005B4FD1 /* ErrorConsoleReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */; };
 		4E4CFB192498B976005B4FD1 /* ErrorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB182498B976005B4FD1 /* ErrorLine.swift */; };
 		4E4E5371249F48440045B5EB /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5370249F48440045B5EB /* apple-app-site-association */; };
 		4E4E5375249F4C9A0045B5EB /* postlogout-webview.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5373249F4C9A0045B5EB /* postlogout-webview.html */; };
@@ -69,7 +68,6 @@
 		4E07E36B2497DDFA006B1A5A /* LogoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutManager.swift; sourceTree = "<group>"; };
 		4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentActionHandler.swift; sourceTree = "<group>"; };
 		4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorFormatter.swift; sourceTree = "<group>"; };
-		4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorConsoleReporter.swift; sourceTree = "<group>"; };
 		4E4CFB182498B976005B4FD1 /* ErrorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorLine.swift; sourceTree = "<group>"; };
 		4E4E5370249F48440045B5EB /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
 		4E4E5373249F4C9A0045B5EB /* postlogout-webview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "postlogout-webview.html"; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				4E57F7B0249147AD00ED60E5 /* ErrorCodes.swift */,
-				4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */,
 				4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */,
 				4E57F7B1249147AD00ED60E5 /* ErrorHandler.swift */,
 				4E4CFB182498B976005B4FD1 /* ErrorLine.swift */,
@@ -485,7 +482,6 @@
 				4E4E538C249FA2720045B5EB /* TextStyles.swift in Sources */,
 				4E57F7852490F17900ED60E5 /* AppView.swift in Sources */,
 				4E57F7B2249147AD00ED60E5 /* ErrorCodes.swift in Sources */,
-				4E4CFB172498B970005B4FD1 /* ErrorConsoleReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

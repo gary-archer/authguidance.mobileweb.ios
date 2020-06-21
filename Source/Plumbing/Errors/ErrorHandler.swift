@@ -10,7 +10,7 @@ struct ErrorHandler {
     /*
      * Return a typed error from a general UI exception
      */
-    static func fromException (error: Error) -> UIError {
+    static func fromException(error: Error) -> UIError {
 
         // Already handled
         var uiError = error as? UIError
@@ -212,7 +212,7 @@ struct ErrorHandler {
     }
 
     /*
-     * Get details from the exception
+     * Add iOS details from the exception
      */
     private static func updateFromException(error: Error, uiError: UIError) {
 
@@ -225,8 +225,8 @@ struct ErrorHandler {
         if nsError.code != 0 {
             details += "\nCode: \(nsError.code)"
         }
-        if nsError.userInfo.count != 0 {
-            details += "\nUserInfo: \(nsError.userInfo)"
+        for (name, value) in nsError.userInfo {
+            details += "\n\(name): \(value)"
         }
 
         uiError.details = details

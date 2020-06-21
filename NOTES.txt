@@ -1,20 +1,21 @@
 WEB INTEGRATION
 ---------------
-1. Render extended error info
-   Use an orientation handler to improve text about SPA and error displays
-   Retry when there is a config load error - do print output to prove it
-   Put back isInitialised and retry during SPA invocation clicks
+1. Load config should not be fromMessage - and should have its own error code
 
-2. Get rid of ErrorConsoleReporter if possible?
-   Test logout request errors
+2. Render extended error info in main sample
+   general ui error code first
 
-3. Update main iOS sample with extended error info
+3. Use an orientation handler to improve text about SPA and error displays
+
+4. Test logout request errors with an exception on the mobile side
+
+5. Update main iOS sample with extended error info
    Update device installs of both apps
 
-4. Update Android web view sample with home screen changes
+6. Update Android web view sample with home screen changes
    Update device installs opf mobile web app
 
-5. Return stack trace in serialized error, which requires more serialization work
+7. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
    Remains single line in the SPA case to enable copying of bundle stack traces
 

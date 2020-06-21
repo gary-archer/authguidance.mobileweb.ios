@@ -13,6 +13,9 @@ class AppViewModel: ObservableObject {
     // The authenticator does OAuth work
     @Published var authenticator: Authenticator?
 
+    // A flag to record whether we initialised correctly
+    @Published var isInitialised = false
+
     // Display mobile errors invoking the SPA
     @Published var error: UIError?
 
@@ -20,8 +23,16 @@ class AppViewModel: ObservableObject {
      * Read configuration and create global objects
      */
     func initialise() throws {
+
+        // Reset state flags
+        self.isInitialised = false
+
+        // Load configuration and create global objects
         self.configuration = try ConfigurationLoader.load()
         self.authenticator = AuthenticatorImpl(configuration: self.configuration!.oauth)
+
+        // Indicate successful startup
+        self.isInitialised = true
     }
 
     /*

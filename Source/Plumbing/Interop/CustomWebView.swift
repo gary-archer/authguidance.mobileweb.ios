@@ -8,6 +8,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKNavigationDelegate, 
 
     private let configurationAccessor: () -> Configuration?
     private let authenticatorAccessor: () -> Authenticator?
+    private let onLoadError: (UIError) -> Void
     private let width: CGFloat
     private let height: CGFloat
     private var loaded: Bool
@@ -18,11 +19,13 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKNavigationDelegate, 
      */
     init(configurationAccessor: @escaping () -> Configuration?,
          authenticatorAccessor: @escaping () -> Authenticator?,
+         onLoadError: @escaping (UIError) -> Void,
          width: CGFloat,
          height: CGFloat) {
 
         self.configurationAccessor = configurationAccessor
         self.authenticatorAccessor = authenticatorAccessor
+        self.onLoadError = onLoadError
         self.width = width
         self.height = height
         self.loaded = false
@@ -62,7 +65,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKNavigationDelegate, 
             // Prevent SwiftUI causing subsequent reloads of the ReactJS app
             if !self.loaded {
 
-                // Load the SPA base URL
+                // Load the SPA via its base URL
                 let webViewUrl = URL(string: configuration!.app.webBaseUrl)!
                 let request = URLRequest(url: webViewUrl)
                 webview.load(request)
@@ -79,11 +82,8 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKNavigationDelegate, 
         didFailProvisionalNavigation navigation: WKNavigation!,
         withError error: Error) {
 
-        // Translate the error
         let uiError = ErrorHandler.fromWebViewLoadError(error: error)
-
-        // Render it in a basic manner
-        ErrorConsoleReporter.output(error: uiError)
+        self.onLoadError(uiError)
     }
 
     /*
