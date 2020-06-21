@@ -42,6 +42,22 @@ struct ErrorHandler {
     }
 
     /*
+     * Used when we cannot load content into a web view, siuch as a
+     */
+    static func fromWebViewLoadError(error: Error) -> UIError {
+
+        // Create the error
+        let uiError = UIError(
+            area: "Mobile UI",
+            errorCode: ErrorCodes.loadWebViewFailed,
+            userMessage: "A problem was encountered loading web content")
+
+        // Update from the caught exception
+        ErrorHandler.updateFromException(error: error, uiError: uiError)
+        return uiError
+    }
+
+    /*
      * Return an error to short circuit execution
      */
     static func fromLoginRequired() -> UIError {
@@ -199,7 +215,21 @@ struct ErrorHandler {
      * Get details from the exception
      */
     private static func updateFromException(error: Error, uiError: UIError) {
-        uiError.details = error.localizedDescription
+
+        let nsError = error as NSError
+        var details = error.localizedDescription
+
+        if nsError.domain.count > 0 {
+            details += "\nDomain: \(nsError.domain)"
+        }
+        if nsError.code != 0 {
+            details += "\nCode: \(nsError.code)"
+        }
+        if nsError.userInfo.count != 0 {
+            details += "\nUserInfo: \(nsError.userInfo)"
+        }
+
+        uiError.details = details
     }
 
     /*

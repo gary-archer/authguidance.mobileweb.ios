@@ -4,7 +4,7 @@ import WebKit
 /*
  * Wrap a WKWebView and handle method calls from the SPA
  */
-final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler {
+final class CustomWebView: NSObject, UIViewRepresentable, WKNavigationDelegate, WKScriptMessageHandler {
 
     private let configurationAccessor: () -> Configuration?
     private let authenticatorAccessor: () -> Authenticator?
@@ -46,6 +46,7 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
         // Create and return the web view
         let rect = CGRect(x: 0, y: 0, width: self.width, height: self.height)
         self.webView = WKWebView(frame: rect, configuration: configuration)
+        self.webView?.navigationDelegate = self
         return self.webView!
     }
 
@@ -68,6 +69,21 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKScriptMessageHandler
                 self.loaded = true
             }
         }
+    }
+
+    /*
+     * Handle errors loading the web content, and report the URL that has failed
+     */
+    func webView(
+        _ webView: WKWebView,
+        didFailProvisionalNavigation navigation: WKNavigation!,
+        withError error: Error) {
+
+        // Translate the error
+        let uiError = ErrorHandler.fromWebViewLoadError(error: error)
+
+        // Render it in a basic manner
+        ErrorConsoleReporter.output(error: uiError)
     }
 
     /*

@@ -1,38 +1,32 @@
-WEB INTEGRATION STAGE 1
------------------------
-1. Get rid of mobile page loading from my 3 APIs
+WEB INTEGRATION
+---------------
+1. Show a 'Mobile Web Integration Demo' title
+   It can update to Problem Encountered + Retry when needed
+   Show options to Load SPA:
+   * Web View
+   * External web content
 
-2. Understand WKWebView operations better
-   Errors not reported when web content cannot load, eg SPA host not running
-   Use ConsoleErrorReporter to report error
-   May need navigation actions to handle:
-   http://onebigfunction.com/ios/2017/01/06/wknavigationdelegate-errors/
+2. Test rendering of errors containing domain + code + user info
+   Update main sample to show this data
+   Get rid of ErrorConsoleReporter if possible?
 
 3. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
    Remains single line in the SPA case to enable copying of bundle stack traces
 
-4. Rename samples + namespaces to webintegration
-   Security API will be a different repo
-
-5. Bookmark SPA page on iPad  - no state in storage
-
-6. Deep link to company 4 on iPad when company 2 active - no refresh
-   Occurs in main sample - see workaround code
-
 WEB INTEGRATION STAGE 2
 -----------------------
-1. Mobile Splash / Home screen (iOS and Android)
-   Loading message
-   Error Summary Display
-   Retry button
-   Later will show options to Load SPA:
-   * Web View
-   * External web content
+1. Rename to mobileweb
+   Security API for one time tokens will be a different repo
 
 2. Concurrent Home clicks should not run code twice
 
 3. Remove tokens on uninstall but not on upgrades
    Test uninstall after login
 
+GENERAL BUGS
+------------
+1. Bookmark SPA page on iPad  - no state in storage
 
+2. Deep link to company 4 on iPad when company 2 active - no refresh
+   Occurs in main sample - see workaround code
