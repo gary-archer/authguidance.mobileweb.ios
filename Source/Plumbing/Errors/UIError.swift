@@ -29,7 +29,7 @@ class UIError: Error, Codable {
     }
 
     /*
-     * Return a JSON representation
+     * Return a JSON representation of the error to return to the Web UI
      */
     func toJson() -> String {
 
@@ -44,11 +44,12 @@ class UIError: Error, Codable {
         }
 
         if !self.details.isEmpty {
-            data["details"] = self.details
+            data["details"] = self.details.data(using: .utf8)!.base64EncodedString()
         }
 
         if self.stack.count > 0 {
-            // data["stack"] = self.stack.joined(separator: "\n")
+            let stackString = self.stack.joined(separator: "\n")
+            data["stack"] = stackString.data(using: .utf8)!.base64EncodedString()
         }
 
         // Serialize the dictionary

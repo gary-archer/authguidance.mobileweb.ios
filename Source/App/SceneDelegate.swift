@@ -8,6 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private var appView: AppView?
+    private var orientationHandler = OrientationHandler()
 
     /*
      * Use this method to optionally configure and attach the UIWindow to the provided UIWindowScene

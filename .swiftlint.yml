@@ -3,7 +3,7 @@
 ##
 
 included:
-- Source
+- Source/Views
 
 identifier_name:
   excluded:

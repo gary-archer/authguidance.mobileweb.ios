@@ -30,6 +30,7 @@
 		4E4E5389249FA1D80045B5EB /* ErrorDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5386249FA1D80045B5EB /* ErrorDetailsView.swift */; };
 		4E4E538A249FA1D80045B5EB /* ErrorDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5387249FA1D80045B5EB /* ErrorDetailsItemView.swift */; };
 		4E4E538C249FA2720045B5EB /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E538B249FA2720045B5EB /* TextStyles.swift */; };
+		4E4E538E249FD2E00045B5EB /* OrientationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E538D249FD2E00045B5EB /* OrientationHandler.swift */; };
 		4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7802490F17900ED60E5 /* AppDelegate.swift */; };
 		4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7822490F17900ED60E5 /* SceneDelegate.swift */; };
 		4E57F7852490F17900ED60E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* AppView.swift */; };
@@ -82,6 +83,7 @@
 		4E4E5386249FA1D80045B5EB /* ErrorDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDetailsView.swift; sourceTree = "<group>"; };
 		4E4E5387249FA1D80045B5EB /* ErrorDetailsItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDetailsItemView.swift; sourceTree = "<group>"; };
 		4E4E538B249FA2720045B5EB /* TextStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		4E4E538D249FD2E00045B5EB /* OrientationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationHandler.swift; sourceTree = "<group>"; };
 		4E57F77D2490F17900ED60E5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57F7802490F17900ED60E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E57F7822490F17900ED60E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				4E4E5382249F95E60045B5EB /* Colors.swift */,
 				4E4E5380249F95CD0045B5EB /* HeaderButtonStyle.swift */,
+				4E4E538D249FD2E00045B5EB /* OrientationHandler.swift */,
 				4E4E538B249FA2720045B5EB /* TextStyles.swift */,
 			);
 			path = Utilities;
@@ -463,6 +466,7 @@
 				4E07E36D2497DDFA006B1A5A /* AuthenticatorImpl.swift in Sources */,
 				4E07E3522497DCFA006B1A5A /* AppViewModel.swift in Sources */,
 				4E07E36E2497DDFA006B1A5A /* TokenStorage.swift in Sources */,
+				4E4E538E249FD2E00045B5EB /* OrientationHandler.swift in Sources */,
 				4E4E5389249FA1D80045B5EB /* ErrorDetailsView.swift in Sources */,
 				4E4E5383249F95E60045B5EB /* Colors.swift in Sources */,
 				4E57F79E2491329600ED60E5 /* JavascriptBridge.swift in Sources */,

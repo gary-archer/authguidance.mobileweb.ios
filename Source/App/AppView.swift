@@ -5,9 +5,16 @@ import SwiftUI
  */
 struct AppView: View {
 
+    // External objects
+    @EnvironmentObject var orientationHandler: OrientationHandler
     @ObservedObject var model: AppViewModel
+
+    // Fields to control rendering state
     @State private var runningWebView = false
 
+    /*
+     * Create the model class
+     */
     init() {
         self.model = AppViewModel()
     }

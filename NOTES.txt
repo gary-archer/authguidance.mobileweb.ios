@@ -1,27 +1,17 @@
 WEB INTEGRATION
 ---------------
-1. Update device installs of both apps
+1. Update Android web view sample with home screen changes
 
-2. Use an orientation handler to improve text about SPA and error displays
-
-3. Test logout request errors with an exception on the mobile side
-
-6. Update Android web view sample with home screen changes
-   Update device installs opf mobile web app
-
-7. Return stack trace in serialized error, which requires more serialization work
-   Improve Web UI error display to be multi line in the mobile case
-   Remains single line in the SPA case to enable copying of bundle stack traces
-
-WEB INTEGRATION STAGE 2
+WEB INTEGRATION NEXT
 -----------------------
 1. Rename to mobileweb
-   Security API for one time tokens will be a different repo
 
-2. Concurrent Home clicks should not run code twice
+2. Get open without passing token working
 
-3. Remove tokens on uninstall but not on upgrades
-   Test uninstall after login
+3. Develop small Security API for one time tokens as its own repo
+   This will be a small Serverless API that uses DynamoDB and can be tested in isolation
+   
+4. Integrate mobile / web samples to use Security API
 
 GENERAL BUGS
 ------------
@@ -29,3 +19,8 @@ GENERAL BUGS
 
 2. Deep link to company 4 on iPad when company 2 active - no refresh
    Occurs in main sample - see workaround code
+   
+3. Concurrent Home clicks should not run code twice for webview apps
+   
+4. Remove tokens on uninstall but not on upgrades
+   Test reinstall after login with stored tokens - should prompt to login again
