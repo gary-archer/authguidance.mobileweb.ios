@@ -1,6 +1,6 @@
 {
   "app": {
-    "webBaseUrl":             "https://web.mycompany.com/spa"
+    "webBaseUrl":             "https://web.authguidance-examples.com/spa"
   },
   "oauth": {
     "authority":              "https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_mZ3NBYpTo",

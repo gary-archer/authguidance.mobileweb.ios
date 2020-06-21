@@ -24,6 +24,7 @@
 		4E4E5376249F4C9A0045B5EB /* postlogin-webview.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5374249F4C9A0045B5EB /* postlogin-webview.html */; };
 		4E4E5378249F4CEC0045B5EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5377249F4CEC0045B5EB /* README.md */; };
 		4E4E537A249F4CF80045B5EB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5379249F4CF80045B5EB /* .gitignore */; };
+		4E4E537D249F63070045B5EB /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E537C249F63060045B5EB /* launch.png */; };
 		4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7802490F17900ED60E5 /* AppDelegate.swift */; };
 		4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7822490F17900ED60E5 /* SceneDelegate.swift */; };
 		4E57F7852490F17900ED60E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* AppView.swift */; };
@@ -70,6 +71,7 @@
 		4E4E5377249F4CEC0045B5EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4E4E5379249F4CF80045B5EB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4E4E537B249F4DAB0045B5EB /* mobilewebview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mobilewebview.entitlements; sourceTree = "<group>"; };
+		4E4E537C249F63060045B5EB /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		4E57F77D2490F17900ED60E5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57F7802490F17900ED60E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E57F7822490F17900ED60E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */,
 				4E57F7BA2491495D00ED60E5 /* Cartfile */,
 				4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */,
+				4E4E537C249F63060045B5EB /* launch.png */,
 				4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */,
 				4E57F7C724914BED00ED60E5 /* .swiftlint.yml */,
 				4E4E5379249F4CF80045B5EB /* .gitignore */,
@@ -351,6 +354,7 @@
 				4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */,
 				4E4E5378249F4CEC0045B5EB /* README.md in Resources */,
 				4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */,
+				4E4E537D249F63070045B5EB /* launch.png in Resources */,
 				4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */,
 				4E4E5376249F4C9A0045B5EB /* postlogin-webview.html in Resources */,
 				4E4E537A249F4CF80045B5EB /* .gitignore in Resources */,
