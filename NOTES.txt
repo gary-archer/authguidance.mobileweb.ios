@@ -1,16 +1,20 @@
 WEB INTEGRATION
 ---------------
-1. Show a 'Mobile Web Integration Demo' title
-   It can update to Problem Encountered + Retry when needed
-   Show options to Load SPA:
-   * Web View
-   * External web content
+1. Render extended error info
+   Use an orientation handler to improve text about SPA and error displays
+   Retry when there is a config load error - do print output to prove it
+   Put back isInitialised and retry during SPA invocation clicks
 
-2. Test rendering of errors containing domain + code + user info
-   Update main sample to show this data
-   Get rid of ErrorConsoleReporter if possible?
+2. Get rid of ErrorConsoleReporter if possible?
+   Test logout request errors
 
-3. Return stack trace in serialized error, which requires more serialization work
+3. Update main iOS sample with extended error info
+   Update device installs of both apps
+
+4. Update Android web view sample with home screen changes
+   Update device installs opf mobile web app
+
+5. Return stack trace in serialized error, which requires more serialization work
    Improve Web UI error display to be multi line in the mobile case
    Remains single line in the SPA case to enable copying of bundle stack traces
 

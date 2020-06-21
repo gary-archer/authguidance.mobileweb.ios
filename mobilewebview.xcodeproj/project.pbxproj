@@ -25,6 +25,12 @@
 		4E4E5378249F4CEC0045B5EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5377249F4CEC0045B5EB /* README.md */; };
 		4E4E537A249F4CF80045B5EB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5379249F4CF80045B5EB /* .gitignore */; };
 		4E4E537D249F63070045B5EB /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E537C249F63060045B5EB /* launch.png */; };
+		4E4E5381249F95CD0045B5EB /* HeaderButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5380249F95CD0045B5EB /* HeaderButtonStyle.swift */; };
+		4E4E5383249F95E60045B5EB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5382249F95E60045B5EB /* Colors.swift */; };
+		4E4E5388249FA1D80045B5EB /* ErrorSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5385249FA1D80045B5EB /* ErrorSummaryView.swift */; };
+		4E4E5389249FA1D80045B5EB /* ErrorDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5386249FA1D80045B5EB /* ErrorDetailsView.swift */; };
+		4E4E538A249FA1D80045B5EB /* ErrorDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E5387249FA1D80045B5EB /* ErrorDetailsItemView.swift */; };
+		4E4E538C249FA2720045B5EB /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E538B249FA2720045B5EB /* TextStyles.swift */; };
 		4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7802490F17900ED60E5 /* AppDelegate.swift */; };
 		4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7822490F17900ED60E5 /* SceneDelegate.swift */; };
 		4E57F7852490F17900ED60E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* AppView.swift */; };
@@ -72,6 +78,12 @@
 		4E4E5379249F4CF80045B5EB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4E4E537B249F4DAB0045B5EB /* mobilewebview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mobilewebview.entitlements; sourceTree = "<group>"; };
 		4E4E537C249F63060045B5EB /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		4E4E5380249F95CD0045B5EB /* HeaderButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButtonStyle.swift; sourceTree = "<group>"; };
+		4E4E5382249F95E60045B5EB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4E4E5385249FA1D80045B5EB /* ErrorSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSummaryView.swift; sourceTree = "<group>"; };
+		4E4E5386249FA1D80045B5EB /* ErrorDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDetailsView.swift; sourceTree = "<group>"; };
+		4E4E5387249FA1D80045B5EB /* ErrorDetailsItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDetailsItemView.swift; sourceTree = "<group>"; };
+		4E4E538B249FA2720045B5EB /* TextStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		4E57F77D2490F17900ED60E5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57F7802490F17900ED60E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E57F7822490F17900ED60E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +174,35 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
+		4E4E537E249F91C50045B5EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E5384249FA19E0045B5EB /* Errors */,
+				4E4E537F249F95BA0045B5EB /* Utilities */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E4E537F249F95BA0045B5EB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E5382249F95E60045B5EB /* Colors.swift */,
+				4E4E5380249F95CD0045B5EB /* HeaderButtonStyle.swift */,
+				4E4E538B249FA2720045B5EB /* TextStyles.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4E4E5384249FA19E0045B5EB /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E5387249FA1D80045B5EB /* ErrorDetailsItemView.swift */,
+				4E4E5386249FA1D80045B5EB /* ErrorDetailsView.swift */,
+				4E4E5385249FA1D80045B5EB /* ErrorSummaryView.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		4E57F7742490F17900ED60E5 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +250,7 @@
 				4E57F7952490F21F00ED60E5 /* App */,
 				4E57F7A62491472900ED60E5 /* Configuration */,
 				4E57F79C24910BC300ED60E5 /* Plumbing */,
+				4E4E537E249F91C50045B5EB /* Views */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -418,15 +460,20 @@
 				4E07E3702497DDFA006B1A5A /* CognitoLogoutManager.swift in Sources */,
 				4E57F7B52491480C00ED60E5 /* UIError.swift in Sources */,
 				4E07E36F2497DDFA006B1A5A /* TokenData.swift in Sources */,
+				4E4E538A249FA1D80045B5EB /* ErrorDetailsItemView.swift in Sources */,
 				4E57F7AC2491472900ED60E5 /* AppConfiguration.swift in Sources */,
 				4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */,
 				4E07E36D2497DDFA006B1A5A /* AuthenticatorImpl.swift in Sources */,
 				4E07E3522497DCFA006B1A5A /* AppViewModel.swift in Sources */,
 				4E07E36E2497DDFA006B1A5A /* TokenStorage.swift in Sources */,
+				4E4E5389249FA1D80045B5EB /* ErrorDetailsView.swift in Sources */,
+				4E4E5383249F95E60045B5EB /* Colors.swift in Sources */,
 				4E57F79E2491329600ED60E5 /* JavascriptBridge.swift in Sources */,
 				4E07E3722497DDFA006B1A5A /* LogoutManager.swift in Sources */,
+				4E4E5381249F95CD0045B5EB /* HeaderButtonStyle.swift in Sources */,
 				4E57F7AD2491472900ED60E5 /* OAuthConfiguration.swift in Sources */,
 				4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */,
+				4E4E5388249FA1D80045B5EB /* ErrorSummaryView.swift in Sources */,
 				4E57F7AE2491472900ED60E5 /* Configuration.swift in Sources */,
 				4E07E3712497DDFA006B1A5A /* OktaLogoutManager.swift in Sources */,
 				4E07E36C2497DDFA006B1A5A /* Authenticator.swift in Sources */,
@@ -435,6 +482,7 @@
 				4E57F7B3249147AD00ED60E5 /* ErrorHandler.swift in Sources */,
 				4E57F7B92491489300ED60E5 /* DateUtils.swift in Sources */,
 				4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */,
+				4E4E538C249FA2720045B5EB /* TextStyles.swift in Sources */,
 				4E57F7852490F17900ED60E5 /* AppView.swift in Sources */,
 				4E57F7B2249147AD00ED60E5 /* ErrorCodes.swift in Sources */,
 				4E4CFB172498B970005B4FD1 /* ErrorConsoleReporter.swift in Sources */,

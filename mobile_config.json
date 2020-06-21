@@ -14,4 +14,4 @@
     "logoutEndpoint":         "https://login.authguidance-examples.com/logout",
     "scope":                  "openid profile email"
   }
-}
+

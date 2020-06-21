@@ -13,6 +13,9 @@ class AppViewModel: ObservableObject {
     // The authenticator does OAuth work
     @Published var authenticator: Authenticator?
 
+    // Display mobile errors invoking the SPA
+    @Published var error: UIError?
+
     /*
      * Read configuration and create global objects
      */
