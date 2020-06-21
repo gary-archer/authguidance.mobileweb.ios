@@ -1,6 +1,8 @@
-WEB INTEGRATION
----------------
+WEB INTEGRATION PHASE 1
+-----------------------
 1. Update Android web view sample with home screen changes
+   
+2. Intercept web view errors on Android in the same way as iOS?
 
 WEB INTEGRATION NEXT
 -----------------------
