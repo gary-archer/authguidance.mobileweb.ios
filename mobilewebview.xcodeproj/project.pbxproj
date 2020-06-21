@@ -19,6 +19,11 @@
 		4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */; };
 		4E4CFB172498B970005B4FD1 /* ErrorConsoleReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */; };
 		4E4CFB192498B976005B4FD1 /* ErrorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB182498B976005B4FD1 /* ErrorLine.swift */; };
+		4E4E5371249F48440045B5EB /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5370249F48440045B5EB /* apple-app-site-association */; };
+		4E4E5375249F4C9A0045B5EB /* postlogout-webview.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5373249F4C9A0045B5EB /* postlogout-webview.html */; };
+		4E4E5376249F4C9A0045B5EB /* postlogin-webview.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5374249F4C9A0045B5EB /* postlogin-webview.html */; };
+		4E4E5378249F4CEC0045B5EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5377249F4CEC0045B5EB /* README.md */; };
+		4E4E537A249F4CF80045B5EB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5379249F4CF80045B5EB /* .gitignore */; };
 		4E57F7812490F17900ED60E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7802490F17900ED60E5 /* AppDelegate.swift */; };
 		4E57F7832490F17900ED60E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7822490F17900ED60E5 /* SceneDelegate.swift */; };
 		4E57F7852490F17900ED60E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7842490F17900ED60E5 /* AppView.swift */; };
@@ -59,6 +64,12 @@
 		4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorFormatter.swift; sourceTree = "<group>"; };
 		4E4CFB152498B970005B4FD1 /* ErrorConsoleReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorConsoleReporter.swift; sourceTree = "<group>"; };
 		4E4CFB182498B976005B4FD1 /* ErrorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorLine.swift; sourceTree = "<group>"; };
+		4E4E5370249F48440045B5EB /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
+		4E4E5373249F4C9A0045B5EB /* postlogout-webview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "postlogout-webview.html"; sourceTree = "<group>"; };
+		4E4E5374249F4C9A0045B5EB /* postlogin-webview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "postlogin-webview.html"; sourceTree = "<group>"; };
+		4E4E5377249F4CEC0045B5EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4E4E5379249F4CF80045B5EB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4E4E537B249F4DAB0045B5EB /* mobilewebview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mobilewebview.entitlements; sourceTree = "<group>"; };
 		4E57F77D2490F17900ED60E5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57F7802490F17900ED60E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E57F7822490F17900ED60E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,20 +135,50 @@
 			path = Logout;
 			sourceTree = "<group>";
 		};
+		4E4E536E249F48440045B5EB /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E536F249F48440045B5EB /* .well-known */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		4E4E536F249F48440045B5EB /* .well-known */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E5370249F48440045B5EB /* apple-app-site-association */,
+			);
+			path = ".well-known";
+			sourceTree = "<group>";
+		};
+		4E4E5372249F4C9A0045B5EB /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E5373249F4C9A0045B5EB /* postlogout-webview.html */,
+				4E4E5374249F4C9A0045B5EB /* postlogin-webview.html */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
 		4E57F7742490F17900ED60E5 = {
 			isa = PBXGroup;
 			children = (
 				4E57F7942490F20600ED60E5 /* Source */,
 				4E57F7BE24914AA600ED60E5 /* Frameworks */,
+				4E4E536E249F48440045B5EB /* Security */,
+				4E4E5372249F4C9A0045B5EB /* Web */,
+				4E57F78E2490F17A00ED60E5 /* Info.plist */,
+				4E4E537B249F4DAB0045B5EB /* mobilewebview.entitlements */,
 				4E57F7A32491468900ED60E5 /* mobile_config.json */,
 				4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */,
 				4E57F7BA2491495D00ED60E5 /* Cartfile */,
 				4E57F7BB2491495D00ED60E5 /* Cartfile.resolved */,
+				4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */,
 				4E57F7C724914BED00ED60E5 /* .swiftlint.yml */,
+				4E4E5379249F4CF80045B5EB /* .gitignore */,
+				4E4E5377249F4CEC0045B5EB /* README.md */,
 				4E57F79A2490FBE900ED60E5 /* NOTES.txt */,
 				4E57F7862490F17A00ED60E5 /* Assets.xcassets */,
-				4E57F78E2490F17A00ED60E5 /* Info.plist */,
-				4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */,
 				4E57F77E2490F17900ED60E5 /* Products */,
 				4E57F7882490F17A00ED60E5 /* Preview Content */,
 			);
@@ -306,13 +347,18 @@
 			files = (
 				4E57F7C824914BED00ED60E5 /* .swiftlint.yml in Resources */,
 				4E57F7BC2491495D00ED60E5 /* Cartfile in Resources */,
+				4E4E5371249F48440045B5EB /* apple-app-site-association in Resources */,
 				4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */,
+				4E4E5378249F4CEC0045B5EB /* README.md in Resources */,
 				4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */,
 				4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */,
+				4E4E5376249F4C9A0045B5EB /* postlogin-webview.html in Resources */,
+				4E4E537A249F4CF80045B5EB /* .gitignore in Resources */,
 				4E57F78A2490F17A00ED60E5 /* Preview Assets.xcassets in Resources */,
 				4E57F7BD2491495D00ED60E5 /* Cartfile.resolved in Resources */,
 				4E57F7872490F17A00ED60E5 /* Assets.xcassets in Resources */,
 				4E57F7A52491468900ED60E5 /* mobile_config.json in Resources */,
+				4E4E5375249F4C9A0045B5EB /* postlogout-webview.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,8 +569,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = mobilewebview.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
+				DEVELOPMENT_TEAM = U3VTCHYEM7;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,8 +594,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = mobilewebview.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
+				DEVELOPMENT_TEAM = U3VTCHYEM7;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
