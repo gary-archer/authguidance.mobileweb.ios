@@ -9,6 +9,7 @@ WEB INTEGRATION NEXT
 3. SSO should be automatic
    Explain use of one time tokens
    Consider implementing it but maybe just write about it instead
+   Can anyone with a valid token access UI operations, possibly with different privileges?
    
 4. Think a bit more about displaying stack trace in debug v release builds
    Same info should be available in PROD but not rendered
