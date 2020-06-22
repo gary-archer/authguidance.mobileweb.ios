@@ -57,6 +57,7 @@
 		4E57F7C424914AFC00ED60E5 /* SwiftKeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */; };
 		4E57F7C824914BED00ED60E5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7C724914BED00ED60E5 /* .swiftlint.yml */; };
 		4EA0E65224A11B4500EAB458 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0E65124A11B4500EAB458 /* TitleView.swift */; };
+		4EA0E65424A11C6E00EAB458 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0E65324A11C6E00EAB458 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeychainWrapper.framework; path = Carthage/Build/iOS/SwiftKeychainWrapper.framework; sourceTree = SOURCE_ROOT; };
 		4E57F7C724914BED00ED60E5 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		4EA0E65124A11B4500EAB458 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		4EA0E65324A11C6E00EAB458 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA0E65124A11B4500EAB458 /* TitleView.swift */,
+				4EA0E65324A11C6E00EAB458 /* MenuView.swift */,
 			);
 			path = Headings;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				4E07E36F2497DDFA006B1A5A /* TokenData.swift in Sources */,
 				4E4E538A249FA1D80045B5EB /* ErrorDetailsItemView.swift in Sources */,
 				4E57F7AC2491472900ED60E5 /* AppConfiguration.swift in Sources */,
+				4EA0E65424A11C6E00EAB458 /* MenuView.swift in Sources */,
 				4EA0E65224A11B4500EAB458 /* TitleView.swift in Sources */,
 				4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */,
 				4E07E36D2497DDFA006B1A5A /* AuthenticatorImpl.swift in Sources */,

@@ -24,60 +24,21 @@ struct AppView: View {
      */
     var body: some View {
 
-        // Get sizes
         let deviceWidth = UIScreen.main.bounds.size.width
         let deviceHeight = UIScreen.main.bounds.size.height
-        let textFont = deviceWidth < 768 ? Font.system(.caption) : Font.system(.body)
-
-        // The user must be logged into the app in order to pass a token to the system browser
-        var isInvokeSystemBrowserDisabled = true
-        if self.model.authenticator != nil && self.model.authenticator!.isLoggedIn() {
-            isInvokeSystemBrowserDisabled = false
-        }
-
-        // Render the
+        
         return VStack {
 
             // Show the title area
             TitleView(onTapped: self.onHome)
 
+            // Show the menu when applicable
             if self.model.isInitialised && !self.runningWebView {
-
-                // Allow the user to choose how to execute the web content
-                HStack {
-
-                    Button(action: self.onInvokeWebView) {
-                       Text("Run SPA in Web View")
-                    }
-                    .buttonStyle(HeaderButtonStyle(width: deviceWidth * 0.4, disabled: false))
-                    .disabled(false)
-
-                    Button(action: self.onInvokeSystemBrowser) {
-                       Text("Run SPA in Browser")
-                    }
-                    .buttonStyle(HeaderButtonStyle(width: deviceWidth * 0.4, disabled: isInvokeSystemBrowserDisabled))
-                    .disabled(isInvokeSystemBrowserDisabled)
-                }
-
-                // Show some explanatory text
-                HStack {
-
-                    Text("""
-                        Run secured views from the Single Page Application in a WKWebView control.\n
-                        The SPA will call back the mobile host to perform logins and to get tokens.
-                        """)
-                        .frame(width: deviceWidth * 0.4)
-                        .font(textFont)
-                        .padding()
-
-                    Text("""
-                         Run the secured Single Page Application by opening it in the system browser.\n
-                         An encrypted one time token is sent to the SPA so that login is automatic.
-                         """)
-                        .frame(width: deviceWidth * 0.4)
-                        .font(textFont)
-                        .padding()
-                }
+                MenuView(
+                    authenticator: self.model.authenticator,
+                    onInvokeWebView: self.onInvokeWebView,
+                    onInvokeSystemBrowser: self.onInvokeSystemBrowser
+                )
             }
 
             // Display application level errors when applicable

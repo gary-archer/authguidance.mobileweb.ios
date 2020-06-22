@@ -8,9 +8,6 @@ WEB INTEGRATION PHASE 1
 3. Think a bit more about displaying stack trace in debug v release builds
    Same info should be available in PROD but not rendered
 
-4. Improve iOS views to show menu area in a child view
-   More stuff in views folder
-
 WEB INTEGRATION NEXT
 -----------------------
 1. Rename samples from mobilewebview to mobileweb
