@@ -38,13 +38,8 @@ struct AppView: View {
         // Render the
         return VStack {
 
-            // Show the header
-            Text("Mobile Web Integration")
-                .font(.title)
-                .underline()
-                .foregroundColor(Colors.lightBlue)
-                .padding(.bottom)
-                .onTapGesture(perform: self.onHome)
+            // Show the title area
+            TitleView(onTapped: self.onHome)
 
             if self.model.isInitialised && !self.runningWebView {
 
