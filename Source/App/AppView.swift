@@ -97,16 +97,19 @@ struct AppView: View {
     }
 
     /*
-     * Update state to render the web view
+     * Update state to render the SPA in our web view
      */
     private func onInvokeWebView() {
         self.runningWebView = true
     }
 
     /*
-     * Update state to show the system browser
+     * Open our SPA in the system browser
      */
     private func onInvokeSystemBrowser() {
+        
+        let url = URL(string: self.model.configuration!.app.webBaseUrl)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     /*

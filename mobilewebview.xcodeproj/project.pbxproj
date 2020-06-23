@@ -38,7 +38,6 @@
 		4E57F78A2490F17A00ED60E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7892490F17A00ED60E5 /* Preview Assets.xcassets */; };
 		4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F78B2490F17A00ED60E5 /* LaunchScreen.storyboard */; };
 		4E57F7992490F50500ED60E5 /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F7982490F50500ED60E5 /* CustomWebView.swift */; };
-		4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F79A2490FBE900ED60E5 /* NOTES.txt */; };
 		4E57F79E2491329600ED60E5 /* JavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E57F79D2491329600ED60E5 /* JavascriptBridge.swift */; };
 		4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */; };
 		4E57F7A52491468900ED60E5 /* mobile_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7A32491468900ED60E5 /* mobile_config.json */; };
@@ -95,7 +94,6 @@
 		4E57F78C2490F17A00ED60E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E57F78E2490F17A00ED60E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E57F7982490F50500ED60E5 /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
-		4E57F79A2490FBE900ED60E5 /* NOTES.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTES.txt; sourceTree = "<group>"; };
 		4E57F79D2491329600ED60E5 /* JavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptBridge.swift; sourceTree = "<group>"; };
 		4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobile_config_localapi.json; sourceTree = "<group>"; };
 		4E57F7A32491468900ED60E5 /* mobile_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobile_config.json; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				4E57F7C724914BED00ED60E5 /* .swiftlint.yml */,
 				4E4E5379249F4CF80045B5EB /* .gitignore */,
 				4E4E5377249F4CEC0045B5EB /* README.md */,
-				4E57F79A2490FBE900ED60E5 /* NOTES.txt */,
 				4E57F7862490F17A00ED60E5 /* Assets.xcassets */,
 				4E57F77E2490F17900ED60E5 /* Products */,
 				4E57F7882490F17A00ED60E5 /* Preview Content */,
@@ -409,7 +406,6 @@
 				4E4E5371249F48440045B5EB /* apple-app-site-association in Resources */,
 				4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */,
 				4E4E5378249F4CEC0045B5EB /* README.md in Resources */,
-				4E57F79B2490FBE900ED60E5 /* NOTES.txt in Resources */,
 				4E4E537D249F63070045B5EB /* launch.png in Resources */,
 				4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */,
 				4E4E5376249F4C9A0045B5EB /* postlogin-webview.html in Resources */,

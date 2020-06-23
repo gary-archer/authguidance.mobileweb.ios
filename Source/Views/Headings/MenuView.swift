@@ -5,6 +5,7 @@ import SwiftUI
  */
 struct MenuView: View {
 
+    // Data supplied by the parent
     private let authenticator: Authenticator?
     private let onInvokeWebView: () -> Void
     private let onInvokeSystemBrowser: () -> Void

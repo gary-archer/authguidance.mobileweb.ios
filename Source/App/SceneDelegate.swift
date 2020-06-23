@@ -27,9 +27,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Create the main view
             let window = UIWindow(windowScene: windowScene)
             self.appView = AppView()
+            
+            // Finish window creation and supply environment objects
+            self.orientationHandler.isLandscape = windowScene.interfaceOrientation.isLandscape
+            window.rootViewController = UIHostingController(
+                rootView: self.appView.environmentObject(self.orientationHandler)
+            )
 
             // Finish window creation
-            window.rootViewController = UIHostingController(rootView: self.appView)
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -44,6 +49,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if userActivity.webpageURL != nil {
             self.appView?.handleDeepLink(url: userActivity.webpageURL!)
         }
+    }
+
+    /*
+     * Handle repainting views when there is a change in device orientation
+     */
+    func windowScene(
+        _ windowScene: UIWindowScene,
+        didUpdate previousCoordinateSpace: UICoordinateSpace,
+        interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation,
+        traitCollection previousTraitCollection: UITraitCollection) {
+
+        // Set the updated orientation
+        orientationHandler.isLandscape = windowScene.interfaceOrientation.isLandscape
     }
 
     /*
