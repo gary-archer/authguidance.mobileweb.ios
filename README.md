@@ -7,11 +7,14 @@
 
 ### Details
 
-* See the **iOS WebView Overview** page for a summary and instructions on how to run the code
+* See the **Mobile Web Integration Overview** for a visual summary and instructions on how to run the code
 
-### Technologies
+### Technologies and Behaviour
 
 * XCode and SwiftUI are used to develop an app that uses web content from a Secured Cloud SPA
+* Secured ReactJS SPA views can be run from the mobile app, without a second login 
+* SPA views can execute in a web view and call back the mobile app to get tokens
+* SPA views can execute in the system browser using a one time token sent from the mobile app
 
 ### Middleware Used
 
