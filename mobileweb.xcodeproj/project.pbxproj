@@ -76,7 +76,7 @@
 		4E4E5374249F4C9A0045B5EB /* postlogin-webview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "postlogin-webview.html"; sourceTree = "<group>"; };
 		4E4E5377249F4CEC0045B5EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4E4E5379249F4CF80045B5EB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		4E4E537B249F4DAB0045B5EB /* mobilewebview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mobilewebview.entitlements; sourceTree = "<group>"; };
+		4E4E537B249F4DAB0045B5EB /* mobileweb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mobileweb.entitlements; sourceTree = "<group>"; };
 		4E4E537C249F63060045B5EB /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		4E4E5380249F95CD0045B5EB /* HeaderButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButtonStyle.swift; sourceTree = "<group>"; };
 		4E4E5382249F95E60045B5EB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				4E4E536E249F48440045B5EB /* Security */,
 				4E4E5372249F4C9A0045B5EB /* Web */,
 				4E57F78E2490F17A00ED60E5 /* Info.plist */,
-				4E4E537B249F4DAB0045B5EB /* mobilewebview.entitlements */,
+				4E4E537B249F4DAB0045B5EB /* mobileweb.entitlements */,
 				4E57F7A32491468900ED60E5 /* mobile_config.json */,
 				4E57F7A22491468900ED60E5 /* mobile_config_localapi.json */,
 				4E57F7BA2491495D00ED60E5 /* Cartfile */,
@@ -344,9 +344,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E57F77C2490F17900ED60E5 /* mobilewebview */ = {
+		4E57F77C2490F17900ED60E5 /* mobileweb */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E57F7912490F17A00ED60E5 /* Build configuration list for PBXNativeTarget "mobilewebview" */;
+			buildConfigurationList = 4E57F7912490F17A00ED60E5 /* Build configuration list for PBXNativeTarget "mobileweb" */;
 			buildPhases = (
 				4E57F7792490F17900ED60E5 /* Sources */,
 				4E57F77A2490F17900ED60E5 /* Frameworks */,
@@ -358,7 +358,7 @@
 			);
 			dependencies = (
 			);
-			name = mobilewebview;
+			name = mobileweb;
 			productName = "Mobile WebView Demo";
 			productReference = 4E57F77D2490F17900ED60E5 /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -378,7 +378,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E57F7782490F17900ED60E5 /* Build configuration list for PBXProject "mobilewebview" */;
+			buildConfigurationList = 4E57F7782490F17900ED60E5 /* Build configuration list for PBXProject "mobileweb" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -391,7 +391,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E57F77C2490F17900ED60E5 /* mobilewebview */,
+				4E57F77C2490F17900ED60E5 /* mobileweb */,
 			);
 		};
 /* End PBXProject section */
@@ -633,7 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = mobilewebview.entitlements;
+				CODE_SIGN_ENTITLEMENTS = mobileweb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = U3VTCHYEM7;
@@ -647,7 +647,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.authguidance.mobilewebview;
+				PRODUCT_BUNDLE_IDENTIFIER = com.authguidance.mobileweb;
 				PRODUCT_NAME = Demo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,7 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = mobilewebview.entitlements;
+				CODE_SIGN_ENTITLEMENTS = mobileweb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = U3VTCHYEM7;
@@ -672,7 +672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.authguidance.mobilewebview;
+				PRODUCT_BUNDLE_IDENTIFIER = com.authguidance.mobileweb;
 				PRODUCT_NAME = Demo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,7 +682,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E57F7782490F17900ED60E5 /* Build configuration list for PBXProject "mobilewebview" */ = {
+		4E57F7782490F17900ED60E5 /* Build configuration list for PBXProject "mobileweb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E57F78F2490F17A00ED60E5 /* Debug */,
@@ -691,7 +691,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E57F7912490F17A00ED60E5 /* Build configuration list for PBXNativeTarget "mobilewebview" */ = {
+		4E57F7912490F17A00ED60E5 /* Build configuration list for PBXNativeTarget "mobileweb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E57F7922490F17A00ED60E5 /* Debug */,

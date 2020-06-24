@@ -3,7 +3,7 @@
         "apps": [],
         "details": [
             {
-                "appID": "U3VTCHYEM7.com.authguidance.mobilewebview",
+                "appID": "U3VTCHYEM7.com.authguidance.mobileweb",
                 "paths": [ "/webview/*" ]
             },
             {
