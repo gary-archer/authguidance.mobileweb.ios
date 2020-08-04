@@ -1,17 +1,16 @@
 {
   "app": {
-    "webBaseUrl":             "https://web.authguidance-examples.com/spa"
+    "webBaseUrl":             "https://web.authsamples.com/spa"
   },
   "oauth": {
-    "authority":              "https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_mZ3NBYpTo",
-    "clientId":               "7mjn7nveeqsdr52r8r7nv5mt2",
-    "webDomain":              "web.authguidance-examples.com",
-    "loginRedirectPath":      "/mobile/postlogin-webview.html",
-    "postLogoutRedirectPath": "/mobile/postlogout-webview.html",
-    "deepLinkDomain":         "authguidance-examples.com",
-    "loginActivatePath":      "/webview/callback",
-    "postLogoutActivatePath": "/webview/logoutcallback",
-    "logoutEndpoint":         "https://login.authguidance-examples.com/logout",
+    "authority":              "https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_qqJgVeuTn",
+    "clientId":               "2vgb8uqqna5gvac84j5l897gsu",
+    "mobileBaseUrl":          "https://mobile.authsamples.com",
+    "loginRedirectPath":      "/html/mobilewebapp/postlogin.html",
+    "postLogoutRedirectPath": "/html/mobilewebapp/postlogout.html",
+    "loginActivatePath":      "/mobilewebapp/oauth/callback",
+    "postLogoutActivatePath": "/mobilewebapp/oauth/logoutcallback",
+    "logoutEndpoint":         "https://login.authsamples.com/logout",
     "scope":                  "openid profile email"
   }
 }
