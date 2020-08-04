@@ -5,9 +5,10 @@
   "oauth": {
     "authority":              "https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_qqJgVeuTn",
     "clientId":               "2vgb8uqqna5gvac84j5l897gsu",
-    "mobileBaseUrl":          "https://mobile.authsamples.com",
-    "loginRedirectPath":      "/html/mobilewebapp/postlogin.html",
-    "postLogoutRedirectPath": "/html/mobilewebapp/postlogout.html",
+    "webBaseUrl":             "https://authsamples.com",
+    "loginRedirectPath":      "/apps/mobilewebapp/postlogin.html",
+    "postLogoutRedirectPath": "/apps/mobilewebapp/postlogout.html",
+    "deepLinkBaseUrl":        "https://mobile.authsamples.com",
     "loginActivatePath":      "/mobilewebapp/oauth/callback",
     "postLogoutActivatePath": "/mobilewebapp/oauth/logoutcallback",
     "logoutEndpoint":         "https://login.authsamples.com/logout",

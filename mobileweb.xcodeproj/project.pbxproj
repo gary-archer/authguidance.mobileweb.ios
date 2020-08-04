@@ -18,7 +18,6 @@
 		4E07E3742497DE97006B1A5A /* ConcurrentActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */; };
 		4E4CFB162498B970005B4FD1 /* ErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */; };
 		4E4CFB192498B976005B4FD1 /* ErrorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4CFB182498B976005B4FD1 /* ErrorLine.swift */; };
-		4E4E5371249F48440045B5EB /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5370249F48440045B5EB /* apple-app-site-association */; };
 		4E4E5375249F4C9A0045B5EB /* postlogout.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5373249F4C9A0045B5EB /* postlogout.html */; };
 		4E4E5376249F4C9A0045B5EB /* postlogin.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5374249F4C9A0045B5EB /* postlogin.html */; };
 		4E4E5378249F4CEC0045B5EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4E4E5377249F4CEC0045B5EB /* README.md */; };
@@ -55,6 +54,7 @@
 		4E57F7C224914AF500ED60E5 /* SwiftCoroutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F7C124914AF500ED60E5 /* SwiftCoroutine.framework */; };
 		4E57F7C424914AFC00ED60E5 /* SwiftKeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */; };
 		4E57F7C824914BED00ED60E5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4E57F7C724914BED00ED60E5 /* .swiftlint.yml */; };
+		4E73706524D9E5D700D43C76 /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 4E73706424D9E5D700D43C76 /* apple-app-site-association */; };
 		4EA0E65224A11B4500EAB458 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0E65124A11B4500EAB458 /* TitleView.swift */; };
 		4EA0E65424A11C6E00EAB458 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0E65324A11C6E00EAB458 /* MenuView.swift */; };
 /* End PBXBuildFile section */
@@ -71,7 +71,6 @@
 		4E07E3732497DE97006B1A5A /* ConcurrentActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentActionHandler.swift; sourceTree = "<group>"; };
 		4E4CFB142498B970005B4FD1 /* ErrorFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorFormatter.swift; sourceTree = "<group>"; };
 		4E4CFB182498B976005B4FD1 /* ErrorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorLine.swift; sourceTree = "<group>"; };
-		4E4E5370249F48440045B5EB /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
 		4E4E5373249F4C9A0045B5EB /* postlogout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = postlogout.html; sourceTree = "<group>"; };
 		4E4E5374249F4C9A0045B5EB /* postlogin.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = postlogin.html; sourceTree = "<group>"; };
 		4E4E5377249F4CEC0045B5EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		4E57F7C124914AF500ED60E5 /* SwiftCoroutine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCoroutine.framework; path = Carthage/Build/iOS/SwiftCoroutine.framework; sourceTree = SOURCE_ROOT; };
 		4E57F7C324914AFC00ED60E5 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeychainWrapper.framework; path = Carthage/Build/iOS/SwiftKeychainWrapper.framework; sourceTree = SOURCE_ROOT; };
 		4E57F7C724914BED00ED60E5 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		4E73706424D9E5D700D43C76 /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "apple-app-site-association"; path = "Security/apple-app-site-association"; sourceTree = SOURCE_ROOT; };
 		4EA0E65124A11B4500EAB458 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		4EA0E65324A11C6E00EAB458 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +162,7 @@
 		4E4E536F249F48440045B5EB /* .well-known */ = {
 			isa = PBXGroup;
 			children = (
-				4E4E5370249F48440045B5EB /* apple-app-site-association */,
+				4E73706424D9E5D700D43C76 /* apple-app-site-association */,
 			);
 			path = ".well-known";
 			sourceTree = "<group>";
@@ -403,11 +403,11 @@
 			files = (
 				4E57F7C824914BED00ED60E5 /* .swiftlint.yml in Resources */,
 				4E57F7BC2491495D00ED60E5 /* Cartfile in Resources */,
-				4E4E5371249F48440045B5EB /* apple-app-site-association in Resources */,
 				4E57F7A42491468900ED60E5 /* mobile_config_localapi.json in Resources */,
 				4E4E5378249F4CEC0045B5EB /* README.md in Resources */,
 				4E4E537D249F63070045B5EB /* launch.png in Resources */,
 				4E57F78D2490F17A00ED60E5 /* LaunchScreen.storyboard in Resources */,
+				4E73706524D9E5D700D43C76 /* apple-app-site-association in Resources */,
 				4E4E5376249F4C9A0045B5EB /* postlogin.html in Resources */,
 				4E4E537A249F4CF80045B5EB /* .gitignore in Resources */,
 				4E57F78A2490F17A00ED60E5 /* Preview Assets.xcassets in Resources */,

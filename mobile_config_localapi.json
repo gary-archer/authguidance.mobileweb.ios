@@ -5,9 +5,10 @@
   "oauth": {
     "authority":              "https://dev-843469.oktapreview.com/oauth2/default",
     "clientId":               "0oas09h4ihfYki8e40h7",
-    "mobileBaseUrl":          "https://mobile.authsamples.com",
-    "loginRedirectPath":      "/html/mobilewebapp/postlogin.html",
-    "postLogoutRedirectPath": "/html/mobilewebapp/postlogout.html",
+    "webBaseUrl":             "https://authsamples.com",
+    "loginRedirectPath":      "/apps/mobilewebapp/postlogin.html",
+    "postLogoutRedirectPath": "/apps/mobilewebapp/postlogout.html",
+    "deepLinkBaseUrl":        "https://mobile.authsamples.com",
     "loginActivatePath":      "/mobilewebapp/oauth/callback",
     "postLogoutActivatePath": "/mobilewebapp/oauth/logoutcallback",
     "logoutEndpoint":         "",
