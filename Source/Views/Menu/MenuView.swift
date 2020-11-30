@@ -180,8 +180,6 @@ struct MenuView: View {
      * A helper method to get the scene delegate, on which OAuth responses are received
      */
     private func getHostingViewController() -> UIViewController {
-
-        let scene = UIApplication.shared.connectedScenes.first
-        return (scene!.delegate as? SceneDelegate)!.window!.rootViewController!
+        return UIApplication.shared.windows.first!.rootViewController!
     }
 }
