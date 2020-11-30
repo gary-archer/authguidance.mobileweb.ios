@@ -7,6 +7,7 @@ import SwiftUI
 @main
 struct DemoAppApp: App {
 
+    private let appViewModel = AppViewModel()
     private let orientationHandler = OrientationHandler()
 
     /*
@@ -15,13 +16,9 @@ struct DemoAppApp: App {
     var body: some Scene {
 
         WindowGroup {
-            AppView(model: AppViewModel())
+            AppView(model: self.appViewModel)
                 .environmentObject(self.orientationHandler)
-                .onOpenURL(perform: { url in
-
-                    // Claimed HTTPS scheme login / logout responses are received as deep links here
-                    // self.viewRouter.handleDeepLink(url: url)
-                })
+                .onOpenURL(perform: self.appViewModel.handleOAuthResponse)
                 .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
 
                     // Handle orientation changes in the app by updating the handler
