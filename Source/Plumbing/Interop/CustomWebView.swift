@@ -39,14 +39,14 @@ final class CustomWebView: NSObject, UIViewRepresentable, WKNavigationDelegate, 
         }
 
         // First enable Javascript
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
+        let preferences = WKWebpagePreferences()
+        preferences.allowsContentJavaScript = true
 
         // Make a bridge to the mobile app available to our SPA
         let configuration = WKWebViewConfiguration()
         configuration.userContentController.add(self, name: "mobileBridge")
         configuration.userContentController.addUserScript(self.createConsoleLogUserScript())
-        configuration.preferences = preferences
+        configuration.defaultWebpagePreferences = preferences
 
         // Create and return the web view
         let rect = CGRect(x: 0, y: 0, width: self.width, height: self.height)
